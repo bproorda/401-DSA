@@ -18,7 +18,33 @@ namespace DSA
         }
         public static int[] InsertShiftArray(int[] array, int number)
         {
-            return array;
+            int middleIndex = 0;
+            int[] newArray = new int[array.Length + 1];
+            if (array.Length % 2 == 0)
+            {
+                middleIndex = array.Length / 2;
+            }
+            else
+            {
+                middleIndex = (array.Length / 2) + 1;
+            }
+
+            for (int i = 0; i < newArray.Length; i++)
+            {
+                if (i < middleIndex)
+                {
+                    newArray[i] = array[i];
+                }
+                else if (i == middleIndex)
+                {
+                    newArray[i] = number;
+                }
+                else if (i > middleIndex)
+                {
+                    newArray[i] = array[i - 1];
+                }
+            }
+            return newArray;
         }
     }
 }
