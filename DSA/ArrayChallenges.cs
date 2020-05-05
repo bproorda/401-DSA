@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DSA
 {
-    public class ArrayReverse
+    public class ArrayChallenges
     {
         public static int[] ReverseArray(int[] array)
         {
@@ -15,6 +15,10 @@ namespace DSA
                 answerArray[i] = array[(length - (1 + i))];
             }
             return answerArray;
+        }
+        public static int[] InsertShiftArray(int[] array, int number)
+        {
+            return array;
         }
     }
 }

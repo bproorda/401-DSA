@@ -12,7 +12,7 @@ namespace DSA.tests
             int[] input = new int[0];
 
             // Act
-            int[] result = ArrayReverse.ReverseArray(input);
+            int[] result = ArrayChallenges.ReverseArray(input);
 
             // Assert
             Assert.Empty(result);
@@ -30,7 +30,7 @@ namespace DSA.tests
             // from input
 
             // Act
-            int[] result = ArrayReverse.ReverseArray(input);
+            int[] result = ArrayChallenges.ReverseArray(input);
 
             // Assert
             Assert.Equal(expected, result);
