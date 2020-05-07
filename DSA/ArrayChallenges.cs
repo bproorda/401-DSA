@@ -46,5 +46,40 @@ namespace DSA
             }
             return newArray;
         }
+        public static int BinarySearch(int[] sortedArray, int searchKey)
+        {
+            int startPoint = 0;
+            int endPoint = sortedArray.Length - 1;
+            int middleIndex = 13;
+            bool foundAnswer = false;
+            while(startPoint < endPoint)
+            {
+                middleIndex = (startPoint + endPoint) / 2;
+                
+                if (sortedArray[middleIndex] == searchKey)
+                {
+                    foundAnswer = true;
+                    break;
+                } else if (sortedArray[middleIndex] < searchKey)
+                {
+                    startPoint = middleIndex + 1;
+                } else if (sortedArray[middleIndex] > searchKey)
+                {
+                    endPoint = middleIndex - 1;
+                }
+            }
+
+            if (foundAnswer == true)
+            {
+                return middleIndex;
+            } else
+            {
+                return -1;
+            }
+            
+          
+           
+
+        }
     }
 }
