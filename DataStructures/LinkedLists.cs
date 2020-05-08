@@ -20,5 +20,10 @@ namespace DataStructures
                 this.Next = null;
         }
         }
+
+        public override string ToString()
+        {
+            return "";
+        }
     }
 }

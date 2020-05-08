@@ -20,7 +20,7 @@ namespace DataStructures.Tests
             DataStructures.LinkedLists testList = new LinkedLists();
 
             //Assert
-            Assert.NotNull(testList);
+            Assert.Equal("", testList.ToString());
         }
     }
 }
