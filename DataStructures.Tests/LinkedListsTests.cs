@@ -8,7 +8,7 @@ namespace DataStructures.Tests
     2. Can properly insert into the linked list DONE
     3. The head property will properly point to the first node in the linked list DONE
     4. Can properly insert multiple nodes into the linked list DONE
-    5. Will return true when finding a value within the linked list that exists
+    5. Will return true when finding a value within the linked list that exists DONE
     6. Will return false when searching for a value in the linked list that does not exist
     7. Can properly return a collection of all the values that exist in the linked list DONE
      */
@@ -60,14 +60,28 @@ namespace DataStructures.Tests
             testList.Insert(13);
             testList.Insert(12);
 
-
             //Act
             bool result = testList.Includes(13);
 
             //Assert
             Assert.True(result);
-
         }
+
+        [Fact]
+        public void Includes_Returns_False()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(13);
+            testList.Insert(12);
+
+            //Act
+            bool result = testList.Includes(11);
+
+            //Assert
+            Assert.False(result);
+        }
+
 
     }
 }
