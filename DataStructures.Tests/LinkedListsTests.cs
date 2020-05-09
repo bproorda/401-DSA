@@ -7,7 +7,7 @@ namespace DataStructures.Tests
     1. Can successfully instantiate an empty linked list DONE
     2. Can properly insert into the linked list DONE
     3. The head property will properly point to the first node in the linked list DONE
-    4. Can properly insert multiple nodes into the linked list
+    4. Can properly insert multiple nodes into the linked list Done
     5. Will return true when finding a value within the linked list that exists
     6. Will return false when searching for a value in the linked list that does not exist
     7. Can properly return a collection of all the values that exist in the linked list
@@ -33,7 +33,7 @@ namespace DataStructures.Tests
             testList.Insert(13);
 
             //Assert
-            Assert.Equal("13", testList.ToString());
+            Assert.Equal("{13}", testList.ToString());
         }
 
         [Fact]
@@ -41,12 +41,12 @@ namespace DataStructures.Tests
         {
             //Arrange
             DataStructures.LinkedLists testList = new LinkedLists();
-            int expected = 13;
-            testList.Insert(expected);
+            testList.Insert(13);
+            string expected = "{12} => {13}";
 
             //Act
             testList.Insert(12);
-            int result = testList.Head.Next.Value;
+            string result = testList.ToString();
 
             //Assert
             Assert.Equal(expected, result);

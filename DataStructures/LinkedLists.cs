@@ -24,22 +24,20 @@ namespace DataStructures
 
         public override string ToString()
         {
-            /*string output = "";
-            if (this.Head == null)
-            {
-                 output = $"{this.Head.Value}";
+            string output = "";
+          
+            if (Head != null)
+            { 
+                output += $"{{{Current.Value}}}";
+                while(Current.Next != null)
+                {
+                    Current = Current.Next;
+                    output += $" => {{{Current.Value}}}";
+                }
+                   
+               
             }
-
-            return output; */
-
-            if (Head == null)
-            {
-                return "";
-            } else
-            {
-                return Head.Value.ToString();
-            }
-
+            return output;
         }
 
         public void Insert(int newValue)
@@ -48,6 +46,7 @@ namespace DataStructures
             if(Head != null)
             { newNode.Next = Head; }
             Head = newNode;
+            Current = newNode;
         }
     }
 }
