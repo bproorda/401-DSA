@@ -20,7 +20,7 @@ namespace DataStructures.Tests
             DataStructures.LinkedLists testList = new LinkedLists();
 
             //Assert
-            Assert.Equal("", testList.ToString());
+            Assert.Equal("NULL", testList.ToString());
         }
 
         [Fact]
@@ -33,7 +33,7 @@ namespace DataStructures.Tests
             testList.Insert(13);
 
             //Assert
-            Assert.Equal("{13}", testList.ToString());
+            Assert.Equal("{13} => NULL", testList.ToString());
         }
 
         [Fact]
@@ -42,7 +42,7 @@ namespace DataStructures.Tests
             //Arrange
             DataStructures.LinkedLists testList = new LinkedLists();
             testList.Insert(13);
-            string expected = "{12} => {13}";
+            string expected = "{12} => {13} => NULL";
 
             //Act
             testList.Insert(12);

@@ -9,7 +9,6 @@ namespace DataStructures
     public class LinkedLists
     {
         public Node Head = null;
-        public Node Current = null;
 
         public class Node
         {
@@ -25,28 +24,36 @@ namespace DataStructures
         public override string ToString()
         {
             string output = "";
-          
+            Node Current = Head;
+            bool toggle = true;
             if (Head != null)
             { 
-                output += $"{{{Current.Value}}}";
-                while(Current.Next != null)
+               
+                while(toggle)
                 {
+                    if (Current.Next == null)
+                    {
+                        toggle = false;
+                    }
+                    output += $"{{{Current.Value}}} => ";
                     Current = Current.Next;
-                    output += $" => {{{Current.Value}}}";
                 }
                    
                
             }
-            return output;
+            return output + "NULL";
         }
 
         public void Insert(int newValue)
         {
+
             Node newNode = new Node(newValue);
             if(Head != null)
-            { newNode.Next = Head; }
+            { 
+                newNode.Next = Head;
+            }
             Head = newNode;
-            Current = newNode;
+          
         }
 
         public bool Includes(int testValue)
@@ -55,6 +62,7 @@ namespace DataStructures
             bool continueOrBreak = true;
             while(continueOrBreak)
             {
+                Node Current = Head;
                 if (Current.Value == testValue)
                 {
                     result = true;
