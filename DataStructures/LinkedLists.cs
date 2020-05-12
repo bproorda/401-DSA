@@ -93,6 +93,20 @@ namespace DataStructures
 
         public void InsertBefore(int value, int newValue)
         {
+            Node newNode = new Node(newValue);
+            Node current = Head;
+            Node previousNode = null;
+            while (current.Value != value)
+            {
+                previousNode = current;
+                current = current.Next;
+            }
+
+            if (current.Value == value)
+            {
+                previousNode.Next = newNode;
+                newNode.Next = current; 
+            }
 
         }
     }
