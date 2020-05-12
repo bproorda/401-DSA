@@ -124,9 +124,17 @@ namespace DataStructures
             {
                 if(current.Value == value)
                 {
-                    newNode.Next = current.Next;
-                    current.Next = newNode;
-                    return;
+                    if (current.Next != null)
+                    {
+                        newNode.Next = current.Next;
+                        current.Next = newNode;
+                        return;
+                    }
+                    else
+                    {
+                        current.Next = newNode;
+                        return;
+                    }
                 } else
                 {
                     current = current.Next;

@@ -179,6 +179,24 @@ namespace DataStructures.Tests
         }
 
         [Fact]
+        public void Insert_After_Last_Node_Test()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(24);
+            testList.Insert(13);
+            testList.Insert(86);
+            string expected = "{86} => {13} => {24} => {5} => NULL";
+
+            //Act
+            testList.InsertAfter(24, 5);
+            string actual = testList.ToString();
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void Insert_After_No_Match_Test_Throws_Exception()
         {
             //Arrange
