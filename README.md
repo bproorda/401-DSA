@@ -20,3 +20,18 @@
        - Insert(): adds a new node with an inputted value to the beginning of the list.
        - Includes(): searches the list for an inputted value and returns true if found and false if not.
        - ToString(): provides a string interperation of the entire linked list
+
+  - **Challenge 6: Linked List insertions
+
+ - ![whiteboard](day06Wb.jpg)
+
+    *Approach* Builds off the previous challenge to allow the user more ways add values to the Linke List
+
+    *Challenge* The big challenge today was changing were they could insert the new node. In challenge 5
+    they only place the user could add a new value is at the top of the list. Now they can add a value to 
+    the end of the list, and before or after and given value.
+
+     *Methods*
+      - AppendToEnd(): Added a value to the end of the list
+      - InsertBefore(): searches the list for a given value, and if it exists, adds the new value before it
+      - InsertAfter(): searches the list for a given value, and if it exists, adds the new value after it

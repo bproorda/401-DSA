@@ -20,7 +20,7 @@ namespace DataStructures.Tests
             DataStructures.LinkedLists testList = new LinkedLists();
 
             //Assert
-            Assert.Equal("", testList.ToString());
+            Assert.Equal("NULL", testList.ToString());
         }
 
         [Fact]
@@ -33,7 +33,7 @@ namespace DataStructures.Tests
             testList.Insert(13);
 
             //Assert
-            Assert.Equal("{13}", testList.ToString());
+            Assert.Equal("{13} => NULL", testList.ToString());
         }
 
         [Fact]
@@ -42,7 +42,7 @@ namespace DataStructures.Tests
             //Arrange
             DataStructures.LinkedLists testList = new LinkedLists();
             testList.Insert(13);
-            string expected = "{12} => {13}";
+            string expected = "{12} => {13} => NULL";
 
             //Act
             testList.Insert(12);
@@ -82,6 +82,98 @@ namespace DataStructures.Tests
             Assert.False(result);
         }
 
+        [Fact]
+        public void Append_To_End_Test()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(3);
+            testList.Insert(1);
+            string expected = "{1} => {3} => {13} => NULL";
+
+            //Act
+            testList.AppendToEnd(13);
+            string actual = testList.ToString();
+
+            //Assert
+            Assert.Equal(expected, actual);
+            
+
+        }
+
+        [Fact]
+        public void Insert_Before_Given_Value_Test()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(24);
+            testList.Insert(13);
+            testList.Insert(86);
+            string expected = "{86} => {5} => {13} => {24} => NULL";
+
+            //Act
+            testList.InsertBefore(13, 5);
+            string actual = testList.ToString();
+
+            //Assert
+            Assert.Equal(expected, actual);
+
+        }
+
+        [Fact]
+        public void Insert_Before_No_Match_Test()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(24);
+            testList.Insert(13);
+            testList.Insert(86);
+            string expected = "{86} => {13} => {24} => NULL";
+
+            //Act
+            testList.InsertBefore(12, 5);
+            string actual = testList.ToString();
+
+            //Assert
+            Assert.Equal(expected, actual);
+
+        }
+
+        [Fact]
+        public void Insert_After_Given_Value_Test()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(24);
+            testList.Insert(13);
+            testList.Insert(86);
+            string expected = "{86} => {13} => {5} => {24} => NULL";
+
+            //Act
+            testList.InsertAfter(13, 5);
+            string actual = testList.ToString();
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Insert_After_No_Match_Test()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(24);
+            testList.Insert(13);
+            testList.Insert(86);
+            string expected = "{86} => {13} => {24} => NULL";
+
+            //Act
+            testList.InsertAfter(11, 5);
+            string actual = testList.ToString();
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
 
     }
 }
