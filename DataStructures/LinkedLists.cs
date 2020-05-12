@@ -100,13 +100,18 @@ namespace DataStructures
             {
                 previousNode = current;
                 current = current.Next;
+                if (current == null)
+                {
+                    break;
+                }
             }
 
-            if (current.Value == value)
+            if (current != null && current.Value == value)
             {
-                previousNode.Next = newNode;
-                newNode.Next = current; 
+                    previousNode.Next = newNode;
+                    newNode.Next = current;
             }
+            
 
         }
     }
