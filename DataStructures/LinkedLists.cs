@@ -82,7 +82,13 @@ namespace DataStructures
         }
         public void AppendToEnd(int value)
         {
-
+            Node newNode = new Node(value);
+            Node current = Head;
+            while (current.Next != null)
+            {
+                current = current.Next;
+            }
+            current.Next = newNode;
         }
     }
 }
