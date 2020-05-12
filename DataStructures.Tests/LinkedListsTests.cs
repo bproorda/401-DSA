@@ -82,6 +82,25 @@ namespace DataStructures.Tests
             Assert.False(result);
         }
 
+        [Fact]
+        public void Append_To_End_Test()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(3);
+            testList.Insert(1);
+            string expected = "{1} => {3} => {13} => NULL";
+
+            //Act
+            testList.AppendToEnd(13);
+            string actual = testList.ToString();
+
+            //Assert
+            Assert.Equal(expected, actual);
+            
+
+        }
+
 
     }
 }

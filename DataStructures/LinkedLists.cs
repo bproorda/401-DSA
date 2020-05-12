@@ -80,5 +80,9 @@ namespace DataStructures
             }
             return result;
         }
+        public void AppendToEnd(int value)
+        {
+
+        }
     }
 }
