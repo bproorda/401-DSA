@@ -204,7 +204,7 @@ namespace DataStructures.Tests
             testList.Insert(24);
             testList.Insert(13);
             testList.Insert(86);
-            string expected = "{86} => {13} => {24} => NULL";
+            //string expected = "{86} => {13} => {24} => NULL";
 
             
 
@@ -217,6 +217,25 @@ namespace DataStructures.Tests
             });
 
           
+        }
+
+        [Fact]
+        public void Knth_From_End_Test()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(44);
+            testList.Insert(13);
+            testList.Insert(86);
+            testList.Insert(75);
+            int userInput = 1;
+
+            //act
+            int actual = testList.KnthFromEnd(userInput);
+
+            //assert
+            Assert.Equal(13, actual);
+
         }
 
     }

@@ -142,5 +142,10 @@ namespace DataStructures
             }
             throw new ArgumentException("Value not found");
         }
+
+        public int KnthFromEnd(int indexNumber)
+        {
+            return 12;
+        }
     }
 }
