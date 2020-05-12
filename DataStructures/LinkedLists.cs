@@ -98,14 +98,15 @@ namespace DataStructures
                 {
                     previousNode.Next = newNode;
                     newNode.Next = current;
-                    break;
+                    return;
                 } else
                 {
                     previousNode = current;
                     current = current.Next;
                 }
-                
+               
             }
+            throw new ArgumentException("Value not found");
         }
 
         public void InsertAfter(int value, int newValue)
@@ -118,12 +119,13 @@ namespace DataStructures
                 {
                     newNode.Next = current.Next;
                     current.Next = newNode;
-                    break;
+                    return;
                 } else
                 {
                     current = current.Next;
                 }
             }
+            throw new ArgumentException("Value not found");
         }
     }
 }

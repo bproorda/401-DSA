@@ -121,21 +121,24 @@ namespace DataStructures.Tests
         }
 
         [Fact]
-        public void Insert_Before_No_Match_Test()
+        public void Insert_Before_No_Match_Test_Throws_Exception()
         {
             //Arrange
             DataStructures.LinkedLists testList = new LinkedLists();
             testList.Insert(24);
             testList.Insert(13);
             testList.Insert(86);
-            string expected = "{86} => {13} => {24} => NULL";
+            //string expected = "{86} => {13} => {24} => NULL";
 
-            //Act
-            testList.InsertBefore(12, 5);
-            string actual = testList.ToString();
+
 
             //Assert
-            Assert.Equal(expected, actual);
+            Assert.Throws<ArgumentException>(() =>
+            {
+                //Act
+                testList.InsertBefore(12, 5);
+                string actual = testList.ToString();
+            });
 
         }
 
@@ -158,7 +161,7 @@ namespace DataStructures.Tests
         }
 
         [Fact]
-        public void Insert_After_No_Match_Test()
+        public void Insert_After_No_Match_Test_Throws_Exception()
         {
             //Arrange
             DataStructures.LinkedLists testList = new LinkedLists();
@@ -167,12 +170,17 @@ namespace DataStructures.Tests
             testList.Insert(86);
             string expected = "{86} => {13} => {24} => NULL";
 
-            //Act
-            testList.InsertAfter(11, 5);
-            string actual = testList.ToString();
+            
 
             //Assert
-            Assert.Equal(expected, actual);
+            Assert.Throws<ArgumentException>(() =>
+            {
+                //Act
+                testList.InsertAfter(11, 5);
+                string actual = testList.ToString();
+            });
+
+          
         }
 
     }
