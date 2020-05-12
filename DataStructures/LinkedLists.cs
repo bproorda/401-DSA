@@ -91,6 +91,13 @@ namespace DataStructures
             Node current = Head;
             Node previousNode = null;
              newNode.Next = current;
+
+            if(Head != null && Head.Value == value)
+            {
+                newNode.Next = Head;
+                Head = newNode;
+                return;
+            }
           
             while(current != null)
             {

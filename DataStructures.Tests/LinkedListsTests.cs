@@ -119,6 +119,24 @@ namespace DataStructures.Tests
             Assert.Equal(expected, actual);
 
         }
+        [Fact]
+        public void Insert_Before_At_Start_Test()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(24);
+            testList.Insert(13);
+            testList.Insert(86);
+            string expected = "{5} => {86} => {13} => {24} => NULL";
+
+            //Act
+            testList.InsertBefore(86, 5);
+            string actual = testList.ToString();
+
+            //Assert
+            Assert.Equal(expected, actual);
+
+        }
 
         [Fact]
         public void Insert_Before_No_Match_Test_Throws_Exception()
