@@ -238,5 +238,23 @@ namespace DataStructures.Tests
 
         }
 
+        [Fact]
+        public void Knth_Is_Length_From_End_Test()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(44);
+            testList.Insert(13);
+            testList.Insert(86);
+            testList.Insert(75);
+            int userInput = 1;
+
+            //act
+            int actual = testList.KnthFromEnd(userInput);
+
+            //assert
+            Assert.Equal(75, actual);
+
+        }
     }
 }
