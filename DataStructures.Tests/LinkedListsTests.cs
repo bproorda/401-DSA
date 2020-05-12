@@ -247,7 +247,7 @@ namespace DataStructures.Tests
             testList.Insert(13);
             testList.Insert(86);
             testList.Insert(75);
-            int userInput = 1;
+            int userInput = 3;
 
             //act
             int actual = testList.KnthFromEnd(userInput);

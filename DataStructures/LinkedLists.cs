@@ -160,8 +160,8 @@ namespace DataStructures
                 throw new IndexOutOfRangeException("Invalid index number");
             }
             for (int i = index; i > indexNumber; i--)
-            {  
-                    current = current.Next; 
+            {
+                current = current.Next;
             }
             answer = current.Value;
             return answer;
