@@ -256,5 +256,29 @@ namespace DataStructures.Tests
             Assert.Equal(75, actual);
 
         }
+
+        [Fact]
+        public void Knth_Is_Where_K_Is_Negative_Test()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(44);
+            testList.Insert(13);
+            testList.Insert(86);
+            testList.Insert(75);
+            int userInput = -3;
+
+
+            //Assert
+            Assert.Throws<IndexOutOfRangeException>(() =>
+            {
+                //act
+                int actual = testList.KnthFromEnd(userInput);
+            });
+           
+
+           
+
+        }
     }
 }
