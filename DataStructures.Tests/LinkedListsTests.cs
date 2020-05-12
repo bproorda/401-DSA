@@ -276,9 +276,21 @@ namespace DataStructures.Tests
                 int actual = testList.KnthFromEnd(userInput);
             });
            
-
-           
-
         }
+        [Fact]
+        public void Knth_For_List_Of_One()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(44);
+            int userInput = 0;
+
+            //act
+            int actual = testList.KnthFromEnd(userInput);
+
+            //assert
+            Assert.Equal(44, actual);
+        }
+
     }
 }
