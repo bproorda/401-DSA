@@ -145,7 +145,26 @@ namespace DataStructures
 
         public int KnthFromEnd(int indexNumber)
         {
-            return 12;
+            int length = 0;
+            int answer = 0;
+            Node current = Head;
+            while(current != null)
+            {
+                current = current.Next;
+                length++;
+            }
+            int index = length - 1;
+            current = Head;
+            if (indexNumber > index || indexNumber < 0)
+            {
+                throw new IndexOutOfRangeException("Invalid index number");
+            }
+            for (int i = index; i > indexNumber; i--)
+            {  
+                    current = current.Next; 
+            }
+            answer = current.Value;
+            return answer;
         }
     }
 }
