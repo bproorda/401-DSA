@@ -139,6 +139,41 @@ namespace DataStructures.Tests
 
         }
 
+        [Fact]
+        public void Insert_After_Given_Value_Test()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(24);
+            testList.Insert(13);
+            testList.Insert(86);
+            string expected = "{86} => {13} => {5} => {24} => NULL";
+
+            //Act
+            testList.InsertAfter(13, 5);
+            string actual = testList.ToString();
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Insert_After_No_Match_Test()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(24);
+            testList.Insert(13);
+            testList.Insert(86);
+            string expected = "{86} => {13} => {24} => NULL";
+
+            //Act
+            testList.InsertAfter(11, 5);
+            string actual = testList.ToString();
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
 
     }
 }

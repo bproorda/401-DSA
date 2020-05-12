@@ -111,8 +111,24 @@ namespace DataStructures
                     previousNode.Next = newNode;
                     newNode.Next = current;
             }
-            
+        }
 
+        public void InsertAfter(int value, int newValue)
+        {
+            Node newNode = new Node(newValue);
+            Node current = Head;
+            while (current != null)
+            {
+                if(current.Value == value)
+                {
+                    newNode.Next = current.Next;
+                    current.Next = newNode;
+                    break;
+                } else
+                {
+                    current = current.Next;
+                }
+            }
         }
     }
 }
