@@ -59,27 +59,21 @@ namespace DataStructures
         public bool Includes(int testValue)
         {
             bool result = false;
-            bool continueOrBreak = true;
-            while(continueOrBreak)
+            Node Current = Head;
+            while (Current != null)
             {
-                Node Current = Head;
+                
                 if (Current.Value == testValue)
                 {
                     result = true;
-                    continueOrBreak = false;
-                }
-                if (Current.Next != null)
-                {
-                    Current = Current.Next;
-                } else
-                {
-                    continueOrBreak = false;
                 }
 
-                 
+                    Current = Current.Next;
             }
             return result;
         }
+
+
         public void AppendToEnd(int newValue)
         {
             Node newNode = new Node(newValue);
@@ -96,20 +90,21 @@ namespace DataStructures
             Node newNode = new Node(newValue);
             Node current = Head;
             Node previousNode = null;
-            while (current.Value != value)
+             newNode.Next = current;
+          
+            while(current != null)
             {
-                previousNode = current;
-                current = current.Next;
-                if (current == null)
+                if(current.Value == value)
                 {
-                    break;
-                }
-            }
-
-            if (current != null && current.Value == value)
-            {
                     previousNode.Next = newNode;
                     newNode.Next = current;
+                    break;
+                } else
+                {
+                    previousNode = current;
+                    current = current.Next;
+                }
+                
             }
         }
 
