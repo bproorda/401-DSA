@@ -80,15 +80,20 @@ namespace DataStructures
             }
             return result;
         }
-        public void AppendToEnd(int value)
+        public void AppendToEnd(int newValue)
         {
-            Node newNode = new Node(value);
+            Node newNode = new Node(newValue);
             Node current = Head;
             while (current.Next != null)
             {
                 current = current.Next;
             }
             current.Next = newNode;
+        }
+
+        public void InsertBefore(int value, int newValue)
+        {
+
         }
     }
 }

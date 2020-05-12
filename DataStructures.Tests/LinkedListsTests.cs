@@ -101,6 +101,25 @@ namespace DataStructures.Tests
 
         }
 
+        [Fact]
+        public void Insert_Before_Given_Value_Test()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(24);
+            testList.Insert(13);
+            testList.Insert(86);
+            string expected = "{86} => {5} => {13} => {24} => NULL";
+
+            //Act
+            testList.InsertBefore(13, 5);
+            string actual = testList.ToString();
+
+            //Assert
+            Assert.Equal(expected, actual);
+
+        }
+
 
     }
 }
