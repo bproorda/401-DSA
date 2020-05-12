@@ -119,23 +119,44 @@ namespace DataStructures.Tests
             Assert.Equal(expected, actual);
 
         }
-
         [Fact]
-        public void Insert_Before_No_Match_Test()
+        public void Insert_Before_At_Start_Test()
         {
             //Arrange
             DataStructures.LinkedLists testList = new LinkedLists();
             testList.Insert(24);
             testList.Insert(13);
             testList.Insert(86);
-            string expected = "{86} => {13} => {24} => NULL";
+            string expected = "{5} => {86} => {13} => {24} => NULL";
 
             //Act
-            testList.InsertBefore(12, 5);
+            testList.InsertBefore(86, 5);
             string actual = testList.ToString();
 
             //Assert
             Assert.Equal(expected, actual);
+
+        }
+
+        [Fact]
+        public void Insert_Before_No_Match_Test_Throws_Exception()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(24);
+            testList.Insert(13);
+            testList.Insert(86);
+            //string expected = "{86} => {13} => {24} => NULL";
+
+
+
+            //Assert
+            Assert.Throws<ArgumentException>(() =>
+            {
+                //Act
+                testList.InsertBefore(12, 5);
+                string actual = testList.ToString();
+            });
 
         }
 
@@ -158,21 +179,117 @@ namespace DataStructures.Tests
         }
 
         [Fact]
-        public void Insert_After_No_Match_Test()
+        public void Insert_After_Last_Node_Test()
         {
             //Arrange
             DataStructures.LinkedLists testList = new LinkedLists();
             testList.Insert(24);
             testList.Insert(13);
             testList.Insert(86);
-            string expected = "{86} => {13} => {24} => NULL";
+            string expected = "{86} => {13} => {24} => {5} => NULL";
 
             //Act
-            testList.InsertAfter(11, 5);
+            testList.InsertAfter(24, 5);
             string actual = testList.ToString();
 
             //Assert
             Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Insert_After_No_Match_Test_Throws_Exception()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(24);
+            testList.Insert(13);
+            testList.Insert(86);
+            //string expected = "{86} => {13} => {24} => NULL";
+
+            
+
+            //Assert
+            Assert.Throws<ArgumentException>(() =>
+            {
+                //Act
+                testList.InsertAfter(11, 5);
+                string actual = testList.ToString();
+            });
+
+          
+        }
+
+        [Fact]
+        public void Knth_From_End_Test()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(44);
+            testList.Insert(13);
+            testList.Insert(86);
+            testList.Insert(75);
+            int userInput = 1;
+
+            //act
+            int actual = testList.KnthFromEnd(userInput);
+
+            //assert
+            Assert.Equal(13, actual);
+
+        }
+
+        [Fact]
+        public void Knth_Is_Length_From_End_Test()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(44);
+            testList.Insert(13);
+            testList.Insert(86);
+            testList.Insert(75);
+            int userInput = 3;
+
+            //act
+            int actual = testList.KnthFromEnd(userInput);
+
+            //assert
+            Assert.Equal(75, actual);
+
+        }
+
+        [Fact]
+        public void Knth_Is_Where_K_Is_Negative_Test()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(44);
+            testList.Insert(13);
+            testList.Insert(86);
+            testList.Insert(75);
+            int userInput = -3;
+
+
+            //Assert
+            Assert.Throws<IndexOutOfRangeException>(() =>
+            {
+                //act
+                int actual = testList.KnthFromEnd(userInput);
+            });
+           
+        }
+        [Fact]
+        public void Knth_For_List_Of_One()
+        {
+            //Arrange
+            DataStructures.LinkedLists testList = new LinkedLists();
+            testList.Insert(44);
+            int userInput = 0;
+
+            //act
+            int actual = testList.KnthFromEnd(userInput);
+
+            //assert
+            Assert.Equal(44, actual);
         }
 
     }

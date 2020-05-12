@@ -35,3 +35,14 @@
       - AppendToEnd(): Added a value to the end of the list
       - InsertBefore(): searches the list for a given value, and if it exists, adds the new value before it
       - InsertAfter(): searches the list for a given value, and if it exists, adds the new value after it
+
+- **Challenge 7: Linked Lists - Knth from the end
+
+    *Approach* Todays Challenge is create a method where the user inputs a index number and the method returns
+    the value of the node at that index, counting from the end ie the last node is as index 0;
+    
+    *Challenge* the KnthFromEnd method works by first cycling through the list to establish its length. It 
+    then uses the length and inputted index number to move to the correct node.
+
+    *Method*
+    - KnthFromTheEnd(): searches the list for a node at a particular index and returns the value of that node

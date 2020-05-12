@@ -91,6 +91,13 @@ namespace DataStructures
             Node current = Head;
             Node previousNode = null;
              newNode.Next = current;
+
+            if(Head != null && Head.Value == value)
+            {
+                newNode.Next = Head;
+                Head = newNode;
+                return;
+            }
           
             while(current != null)
             {
@@ -98,14 +105,15 @@ namespace DataStructures
                 {
                     previousNode.Next = newNode;
                     newNode.Next = current;
-                    break;
+                    return;
                 } else
                 {
                     previousNode = current;
                     current = current.Next;
                 }
-                
+               
             }
+            throw new ArgumentException("Value not found");
         }
 
         public void InsertAfter(int value, int newValue)
@@ -116,14 +124,47 @@ namespace DataStructures
             {
                 if(current.Value == value)
                 {
-                    newNode.Next = current.Next;
-                    current.Next = newNode;
-                    break;
+                    if (current.Next != null)
+                    {
+                        newNode.Next = current.Next;
+                        current.Next = newNode;
+                        return;
+                    }
+                    else
+                    {
+                        current.Next = newNode;
+                        return;
+                    }
                 } else
                 {
                     current = current.Next;
                 }
             }
+            throw new ArgumentException("Value not found");
+        }
+
+        public int KnthFromEnd(int indexNumber)
+        {
+            int length = 0;
+            int answer = 0;
+            Node current = Head;
+            while(current != null)
+            {
+                current = current.Next;
+                length++;
+            }
+            int index = length - 1;
+            current = Head;
+            if (indexNumber > index || indexNumber < 0)
+            {
+                throw new IndexOutOfRangeException("Invalid index number");
+            }
+            for (int i = index; i > indexNumber; i--)
+            {
+                current = current.Next;
+            }
+            answer = current.Value;
+            return answer;
         }
     }
 }
