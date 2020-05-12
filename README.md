@@ -22,6 +22,9 @@
        - ToString(): provides a string interperation of the entire linked list
 
   - **Challenge 6: Linked List insertions
+
+ - ![whiteboard](day06Wb.jpg)
+
     *Approach* Builds off the previous challenge to allow the user more ways add values to the Linke List
 
     *Challenge* The big challenge today was changing were they could insert the new node. In challenge 5
