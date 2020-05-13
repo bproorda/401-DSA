@@ -7,7 +7,7 @@ namespace DSA
 {
     public class LLchallenges
     {
-        public LinkedLists mergeLists(LinkedLists lOne, LinkedLists lTwo)
+        public static LinkedLists mergeLists(LinkedLists lOne, LinkedLists lTwo)
         {
             return lOne;
         }

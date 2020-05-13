@@ -15,13 +15,13 @@ namespace DSA.tests
         {   
             //arrange
             DataStructures.LinkedLists listOne = new LinkedLists();
-            listOne.Insert(5);
-            listOne.Insert(10);
             listOne.Insert(15);
+            listOne.Insert(10);
+            listOne.Insert(5);
             DataStructures.LinkedLists listTwo = new LinkedLists();
-            listOne.Insert(6);
-            listOne.Insert(12);
-            listOne.Insert(18);
+            listTwo.Insert(18);
+            listTwo.Insert(12);
+            listTwo.Insert(6);
             string expected = "{5} => {6} => {10} => {12} => {15} => {18} => NULL";
 
             //act
@@ -29,7 +29,7 @@ namespace DSA.tests
             string actual = actualList.ToString();
 
             //Assert
-            Assert(expected, actual);
+            Assert.Equal(expected, actual);
         }
     }
 }
