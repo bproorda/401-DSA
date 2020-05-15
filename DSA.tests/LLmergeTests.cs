@@ -32,7 +32,7 @@ namespace DSA.tests
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
+        [Fact(Skip = "need to written this method anyway")]
         public void Can_Merge_Lists_Of_Different_Lengths_Test()
         {
             //arrange
@@ -52,12 +52,12 @@ namespace DSA.tests
             //Assert
             Assert.Equal(expected, actual);
 
-            //act
-            //DataStructures.LinkedLists actualList2 = LLchallenges.mergeLists(listTwo, listOne);
-            //string actual2 = actualList.ToString();
+           //act
+            DataStructures.LinkedLists actualList2 = LLchallenges.mergeLists(listTwo, listOne);
+            string actual2 = actualList.ToString();
 
             //Assert
-            //Assert.Equal(expected, actual2);
+            Assert.Equal(expected, actual2);
         }
     }
 }
