@@ -7,8 +7,48 @@ using static DataStructures.LinkedLists;
 namespace DSA
 {
     public class LLchallenges
+
     {
+        //Still getting infinite loop
         public static LinkedLists mergeLists(LinkedLists lOne, LinkedLists lTwo)
+        {
+            Node oneCurrent = lOne.Head.Next;
+            Node twoCurrent = lTwo.Head;
+            Node newCurrent = lOne.Head;
+
+            if (newCurrent != null && twoCurrent != null)
+            {
+                while (oneCurrent != null || twoCurrent != null)
+                {
+                    if (twoCurrent != null)
+                    {
+                        newCurrent.Next = twoCurrent;
+                        newCurrent = newCurrent.Next;
+                        twoCurrent = twoCurrent.Next;
+                    }
+
+                    if (oneCurrent != null)
+                    {
+                        newCurrent.Next = oneCurrent;
+                        newCurrent = newCurrent.Next;
+                        oneCurrent = oneCurrent.Next;
+                    }
+                }
+                return lOne;
+            }
+            else if (newCurrent != null && twoCurrent == null)
+            {
+                return lOne;
+            } else if (newCurrent == null && twoCurrent != null)
+            {
+                return lTwo;
+            } else
+            {
+                return lOne;
+            }
+        }
+
+        public static LinkedLists oldMergeLists(LinkedLists lOne, LinkedLists lTwo)
         {
             LinkedLists mergedList = new LinkedLists();
             Node mCurrent = null;
