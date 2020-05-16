@@ -24,7 +24,7 @@ namespace DataStructures.Tests
         }
 
 
-        [Fact(Skip ="Not ready yet")]
+        [Fact]
         public void Can_Add_And_Peek_Test()
         {
             //arrange

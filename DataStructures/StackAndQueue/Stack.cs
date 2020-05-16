@@ -21,6 +21,16 @@ namespace DataStructures.StackAndQueue
 
         public void push(T value)
         {
+            Node newNode = new Node(value);
+            if (isEmpty())
+            {
+                Top = newNode;
+            } else
+            {
+                newNode.Next = Top.Next;
+                Top = newNode;
+            }
+           
           
         }
 
