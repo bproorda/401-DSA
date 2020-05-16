@@ -88,5 +88,25 @@ namespace DataStructures.Tests
             Assert.Equal(expected, actual);
         }
 
+        [Fact]
+        public void Can_Pop_til_Empty_Test()
+        {
+            //arrange
+            MyStack<int> testStack = new MyStack<int>();
+            testStack.push(0);
+            testStack.push(1);
+            testStack.push(2);
+            testStack.push(3);
+
+            //Act
+            testStack.pop();
+            testStack.pop();
+            testStack.pop();
+            testStack.pop();
+            bool actual = testStack.isEmpty();
+
+            //Assert
+            Assert.True(actual);
+        }
     }
 }
