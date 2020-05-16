@@ -21,7 +21,7 @@
        - Includes(): searches the list for an inputted value and returns true if found and false if not.
        - ToString(): provides a string interperation of the entire linked list
 
-  - **Challenge 6: Linked List insertions
+  - **Challenge 6: Linked List insertions**
 
  - ![whiteboard](day06Wb.jpg)
 
@@ -36,7 +36,9 @@
       - InsertBefore(): searches the list for a given value, and if it exists, adds the new value before it
       - InsertAfter(): searches the list for a given value, and if it exists, adds the new value after it
 
-- **Challenge 7: Linked Lists - Knth from the end
+- **Challenge 7: Linked Lists - Knth from the end**
+
+![whiteboard](KnthFromEndPsuedoCode.png)
 
     *Approach* Todays Challenge is create a method where the user inputs a index number and the method returns
     the value of the node at that index, counting from the end ie the last node is as index 0;
@@ -46,3 +48,13 @@
 
     *Method*
     - KnthFromTheEnd(): searches the list for a node at a particular index and returns the value of that node
+
+
+- **Challenge 8: Linked Lists - Merging Lists**
+
+    *Approach* Today's challenge is to create a method to merge two linked lists together.
+    To merge properly the resulting list should alternative from a node of one list to the a 
+    node of the other
+
+    *Method*
+    - mergeLists(): merge two linked lists together
