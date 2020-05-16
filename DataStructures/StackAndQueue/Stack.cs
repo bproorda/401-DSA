@@ -4,19 +4,29 @@ using System.Text;
 
 namespace DataStructures.StackAndQueue
 {
-    public class Stack<T>
+    public class MyStack<T>
     {
         private Node Top { get; set; } = null;
 
         private class Node
         {
-            public T Value { get; set; }
-            public Node Next { get; set; }
+           public  T Value { get; set; }
+             public Node Next { get; set; }
             public Node(T value)
             {
                 this.Value = value;
                 this.Next = null;
             }
+        }
+
+        public void push(T value)
+        {
+
+        }
+
+        public T peek()
+        {
+            return Top.Value;
         }
     }
 }
