@@ -1,5 +1,8 @@
 # 401-DSA
 ## data structures and algorithms challenges for code 401
+
+![.NET Core](https://github.com/bproorda/401-DSA/workflows/.NET%20Core/badge.svg)
+
 - **Challenge 1: Reverse an array**
   - ![whiteboard](01wb.jpg)
 - **Challenge 2: Insert number into middle of array**
@@ -51,6 +54,8 @@
 
 
 - **Challenge 8: Linked Lists - Merging Lists**
+
+![whiteboard](MergeLinkedList.png)
 
     *Approach* Today's challenge is to create a method to merge two linked lists together.
     To merge properly the resulting list should alternative from a node of one list to the a 
