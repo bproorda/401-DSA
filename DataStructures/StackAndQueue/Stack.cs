@@ -21,12 +21,21 @@ namespace DataStructures.StackAndQueue
 
         public void push(T value)
         {
-
+          
         }
 
         public T peek()
         {
-            return Top.Value;
+            bool isItEmpty = isEmpty();
+            if (!isItEmpty)
+            {
+                return Top.Value;
+            } else
+            {
+                throw new StackEmptyException();
+            }
+           
+            
         }
 
         public bool isEmpty()
@@ -39,5 +48,9 @@ namespace DataStructures.StackAndQueue
                 return false;
             }
         }
+    }
+    public class StackEmptyException : Exception
+    {
+
     }
 }
