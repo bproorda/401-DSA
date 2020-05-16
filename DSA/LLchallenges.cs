@@ -12,12 +12,13 @@ namespace DSA
         //Still getting infinite loop
         public static LinkedLists mergeLists(LinkedLists lOne, LinkedLists lTwo)
         {
-            Node oneCurrent = lOne.Head.Next;
-            Node twoCurrent = lTwo.Head;
-            Node newCurrent = lOne.Head;
 
-            if (newCurrent != null && twoCurrent != null)
+            if (lOne.Head != null && lTwo.Head != null)
             {
+
+                Node oneCurrent = lOne.Head.Next;
+                Node twoCurrent = lTwo.Head;
+                Node newCurrent = lOne.Head;
                 while (oneCurrent != null || twoCurrent != null)
                 {
                     if (twoCurrent != null)
@@ -36,10 +37,10 @@ namespace DSA
                 }
                 return lOne;
             }
-            else if (newCurrent != null && twoCurrent == null)
+            else if (lOne.Head != null && lTwo.Head == null)
             {
                 return lOne;
-            } else if (newCurrent == null && twoCurrent != null)
+            } else if (lOne.Head == null && lTwo.Head != null)
             {
                 return lTwo;
             } else
