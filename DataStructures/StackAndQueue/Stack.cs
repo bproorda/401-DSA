@@ -28,5 +28,16 @@ namespace DataStructures.StackAndQueue
         {
             return Top.Value;
         }
+
+        public bool isEmpty()
+        {
+            if (Top == null)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
+        }
     }
 }
