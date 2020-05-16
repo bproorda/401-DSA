@@ -6,9 +6,9 @@ namespace DataStructures.StackAndQueue
 {
     public class MyStack<T>
     {
-        private Node Top { get; set; } = null;
+        public Node Top { get; set; } = null;
 
-        private class Node
+        public class Node
         {
            public  T Value { get; set; }
              public Node Next { get; set; }
