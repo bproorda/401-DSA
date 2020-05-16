@@ -69,12 +69,12 @@ namespace DataStructures.Tests
             Assert.Equal(expected, actual);
         }
 
-        [Fact(Skip = "needs more work")]
+        [Fact]
         public void Can_Pop_A_Node_Test()
         {
             //arrange
             MyStack<int> testStack = new MyStack<int>();
-            int expected = 3;
+            int expected = 2;
             testStack.push(0);
             testStack.push(1);
             testStack.push(2);
