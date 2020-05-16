@@ -55,13 +55,33 @@ namespace DataStructures.Tests
         {
             //arrange
             MyStack<int> testStack = new MyStack<int>();
-            int expected = 3;
+            int expected = 2;
 
             //Act
             testStack.push(0);
             testStack.push(1);
             testStack.push(2);
             testStack.push(3);
+            //int actual = testStack.peek();
+            int actual = testStack.Top.Next.Value;
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact(Skip = "needs more work")]
+        public void Can_Pop_A_Node_Test()
+        {
+            //arrange
+            MyStack<int> testStack = new MyStack<int>();
+            int expected = 3;
+            testStack.push(0);
+            testStack.push(1);
+            testStack.push(2);
+            testStack.push(3);
+
+            //Act
+            testStack.pop();
             int actual = testStack.peek();
 
             //Assert

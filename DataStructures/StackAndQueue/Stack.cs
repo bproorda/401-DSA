@@ -27,7 +27,7 @@ namespace DataStructures.StackAndQueue
                 Top = newNode;
             } else
             {
-                newNode.Next = Top.Next;
+                newNode.Next = Top;
                 Top = newNode;
             }
            
@@ -46,6 +46,24 @@ namespace DataStructures.StackAndQueue
             }
            
             
+        }
+
+        public T pop()
+        {
+            bool isItEmpty = isEmpty();
+            if (!isItEmpty)
+            {
+                Node temp = Top;
+                Top = Top.Next;
+                temp.Next = null;
+                T answer = temp.Value;
+                return answer;
+            }
+            else
+            {
+                throw new StackEmptyException();
+            }
+
         }
 
         public bool isEmpty()
