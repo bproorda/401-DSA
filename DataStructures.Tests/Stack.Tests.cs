@@ -8,7 +8,23 @@ namespace DataStructures.Tests
 {
     public class StackTests
     {
+
         [Fact]
+        public void Empty_Stack_Throws_Exception()
+        {
+            //Arrange
+            MyStack<int[]> testStack = new MyStack<int[]>();
+
+            //Assert
+            Assert.Throws<StackEmptyException>(() =>
+            {
+                //Act
+                testStack.peek();
+            });
+        }
+
+
+        [Fact(Skip ="Not ready yet")]
         public void Can_Add_And_Peek_Test()
         {
             //arrange
