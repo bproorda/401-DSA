@@ -77,5 +77,23 @@ namespace DataStructures.Tests
             Assert.Equal(13, actual);
 
         }
+
+        [Fact]
+        public void Can_deQueue_Test()
+        {
+            //arrange
+            myQueue<string> testQueue = new myQueue<string>();
+            testQueue.enQueue("First");
+            testQueue.enQueue("Second");
+            testQueue.enQueue("Third");
+
+            //act
+            string actual = testQueue.deQueue();
+
+            //Assert
+            Assert.Equal("Third", actual);
+            
+
+        }
     }
 }
