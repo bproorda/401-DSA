@@ -48,7 +48,14 @@ namespace DataStructures
 
         public bool isEmpty()
         {
-            return false;
+            if (Front == null)
+            {
+                return true;
+
+            } else
+            {
+                return false;
+            }
         }
     }
 
