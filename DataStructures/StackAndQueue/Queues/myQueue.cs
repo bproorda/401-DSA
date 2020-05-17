@@ -38,7 +38,17 @@ namespace DataStructures
 
         public T deQueue()
         {
-            return default(T);
+            if (isEmpty())
+            {
+                throw new QueueEmptyException();
+            }
+            else
+            {
+                Node temp = Front;
+                Front = Front.Next;
+                temp.Next = null;
+                return temp.Value;
+            }
         }
 
         public T peek()

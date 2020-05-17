@@ -91,7 +91,8 @@ namespace DataStructures.Tests
             string actual = testQueue.deQueue();
 
             //Assert
-            Assert.Equal("Third", actual);
+            Assert.Equal("First", actual);
+            Assert.Equal("Second", testQueue.Front.Value);
             
 
         }
