@@ -18,5 +18,30 @@ namespace DataStructures
                 this.Next = null;
             }
         }
+
+        public void enQueue()
+        {
+
+        }
+
+        public T deQueue()
+        {
+            return default(T);
+        }
+
+        public T peek()
+        {
+            return default(T);
+        }
+
+        public bool isEmpty()
+        {
+            return false;
+        }
+    }
+
+    public class QueueEmptyException : Exception
+    {
+
     }
 }
