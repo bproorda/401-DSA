@@ -4,9 +4,9 @@ using System.Text;
 
 namespace DataStructures
 {
-    public class myQueue
+    public class myQueue<T>
     {
-        public Node Top { get; set; } = null;
+        public Node Front { get; set; } = null;
         public Node Rear { get; set; } = null;
         public class Node
         {
