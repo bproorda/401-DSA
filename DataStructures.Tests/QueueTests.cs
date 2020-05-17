@@ -48,5 +48,19 @@ namespace DataStructures.Tests
             Assert.Equal("Rear", testQueue.Rear.Value);
 
         }
+
+        [Fact]
+        public void Peek_Empty_Queue_Throws_Exception_Test()
+        {
+            //arrange
+            myQueue<int> testQueue = new myQueue<int>();
+
+            //Assert
+            Assert.Throws<QueueEmptyException>(() =>
+            {
+                //act
+                testQueue.peek();
+            });
+        }
     }
 }
