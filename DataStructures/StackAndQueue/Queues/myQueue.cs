@@ -19,8 +19,20 @@ namespace DataStructures
             }
         }
 
-        public void enQueue()
+        public void enQueue(T value)
         {
+            Node newNode = new Node(value);
+
+            if (Front == null && Rear == null)
+            {
+                Rear = newNode;
+                Front = newNode;
+            } else
+            {
+                Rear.Next = newNode;
+                Rear = newNode;
+            }
+           
 
         }
 

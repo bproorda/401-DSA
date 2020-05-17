@@ -18,5 +18,18 @@ namespace DataStructures.Tests
             Assert.Null(testQueue.Front);
             Assert.Null(testQueue.Rear);
         }
+
+        [Fact]
+        public void Can_enQueue_Test()
+        {
+            //arrange
+            myQueue<string> testQueue = new myQueue<string>();
+
+            //act
+            testQueue.enQueue("It worked!");
+
+            //Assert
+            Assert.Equal("It worked!", testQueue.Front.Value);
+        }
     }
 }
