@@ -62,5 +62,20 @@ namespace DataStructures.Tests
                 testQueue.peek();
             });
         }
+
+        [Fact]
+        public void Does_Peek_Work_Test()
+        {
+            //arrange
+            myQueue<int> testQueue = new myQueue<int>();
+            testQueue.enQueue(13);
+
+            //act
+            int actual = testQueue.peek();
+
+            //Assert
+            Assert.Equal(13, actual);
+
+        }
     }
 }
