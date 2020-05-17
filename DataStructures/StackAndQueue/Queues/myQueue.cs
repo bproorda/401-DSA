@@ -43,7 +43,13 @@ namespace DataStructures
 
         public T peek()
         {
-            return default(T);
+            if (isEmpty())
+            {
+                throw new QueueEmptyException();
+            } else
+            {
+                return Front.Value;
+            }
         }
 
         public bool isEmpty()
