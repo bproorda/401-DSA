@@ -93,8 +93,29 @@ namespace DataStructures.Tests
             //Assert
             Assert.Equal("First", actual);
             Assert.Equal("Second", testQueue.Front.Value);
-            
+        }
 
+        [Fact]
+        public void Can_deQueue_Queue_To_Empty()
+        {
+            //arrange
+            myQueue<int> testQueue = new myQueue<int>();
+            testQueue.enQueue(10);
+            testQueue.enQueue(11);
+            testQueue.enQueue(12);
+            testQueue.enQueue(13);
+            testQueue.enQueue(14);
+
+            //act
+            testQueue.deQueue();
+            testQueue.deQueue();
+            testQueue.deQueue();
+            testQueue.deQueue();
+            testQueue.deQueue();
+            bool result = testQueue.isEmpty();
+
+            //Assert
+            Assert.True(result);
         }
     }
 }
