@@ -31,5 +31,22 @@ namespace DataStructures.Tests
             //Assert
             Assert.Equal("It worked!", testQueue.Front.Value);
         }
+
+        [Fact]
+        public void Can_enQueue_Multiple_Test()
+        {
+            //arrange
+            myQueue<string> testQueue = new myQueue<string>();
+
+            //act
+            testQueue.enQueue("Front");
+            testQueue.enQueue("Middle");
+            testQueue.enQueue("Rear");
+
+            //Assert
+            Assert.Equal("Front", testQueue.Front.Value);
+            Assert.Equal("Rear", testQueue.Rear.Value);
+
+        }
     }
 }
