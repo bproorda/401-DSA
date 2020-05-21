@@ -20,5 +20,19 @@ namespace DSA.tests
             //Assert
             Assert.True(actual);
         }
+
+        [Fact (Skip = "method needs to be refactoreds")]
+
+        public void Matching_Returns_False()
+        {
+            //arrange
+            string testString = "({[})";
+
+            //act
+            bool actual = MatchingBrackets.MultiBracketValidation(testString);
+
+            //Assert
+            Assert.False(actual);
+        }
     }
 }
