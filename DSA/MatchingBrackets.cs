@@ -22,7 +22,8 @@ namespace DSA
                     if(FindMatch(item) == bracketStack.peek())
                     {
                         bracketStack.pop();
-                    }
+                    } else
+                    { return false; }
                 }
             }
 
