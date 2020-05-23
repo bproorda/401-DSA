@@ -63,3 +63,19 @@
 
     *Method*
     - mergeLists(): merge two linked lists together
+
+- **Challenge 13: Multi Bracket Validation**
+
+![whiteboard](MatchingBrackets.png)
+
+    *Approach*: The goal today was to have method that when given a string, would validate
+    whether the expressions has the proper number and format of brackets
+    IE: "{()[]}" returns true, "[}](" returns false.
+    Out method uses a stack for storage and goes through the string using a foreach
+
+    *Methods*
+    - MultiBracketValidation(string input): checks if the bracket format is correct and returns
+    a boolean
+
+    - FindMatch(char input): Given a closing bracket, this method finds the open bracket that 
+    matches
