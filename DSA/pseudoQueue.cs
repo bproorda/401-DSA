@@ -12,12 +12,18 @@ namespace DSA
 
         public void enqueue(T value)
         {
+            addStack.push(value);
 
         }
 
         public T dequeue()
         {
             return default;
+        }
+
+        public T peek()
+        {
+           return addStack.peek();
         }
     }
 }
