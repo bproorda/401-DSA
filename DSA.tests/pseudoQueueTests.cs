@@ -18,5 +18,18 @@ namespace DSA.tests
             Assert.NotNull(testPQ);
         }
 
+        [Fact]
+        public void Enqueue_Works_Test()
+        {
+            //arrange
+            pseudoQueue<int> testPQ = new DSA.pseudoQueue<int>();
+
+            //act
+            testPQ.enqueue(563);
+
+            //Assert
+            Assert.Equal(563, testPQ.peek());
+        }
+
     }
 }
