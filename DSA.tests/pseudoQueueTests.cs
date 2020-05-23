@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataStructures;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
@@ -53,12 +54,28 @@ namespace DSA.tests
         {
             //arrange
             pseudoQueue<int> testPQ = new DSA.pseudoQueue<int>();
-
-            //act
             testPQ.enqueue(563);
+            //act
+            int actual = testPQ.dequeue();
 
             //Assert
-            Assert.Equal(563, testPQ.dequeue());
+            Assert.Equal(563, actual);
+        }
+
+
+        [Fact]
+        public void Dequeue_Empty_Throws_Exception_Test()
+        {
+            //arrange
+            pseudoQueue<int> testPQ = new DSA.pseudoQueue<int>();
+
+            //Assert
+            //Assert
+            Assert.Throws<DataStructures.StackAndQueue.StackEmptyException>(() =>
+            {
+                //act
+                testPQ.dequeue();
+            });
         }
     }
 }
