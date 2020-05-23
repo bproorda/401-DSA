@@ -24,15 +24,16 @@ namespace DSA.tests
             Assert.True(actual);
         }
 
-        [Fact]
+        [Theory]
+        [InlineData("({[})")]
 
-        public void Matching_Returns_False()
+        public void Matching_Returns_False(string input)
         {
             //arrange
-            string testString = "({[})";
+            //string testString = "({[})";
 
             //act
-            bool actual = MatchingBrackets.MultiBracketValidation(testString);
+            bool actual = MatchingBrackets.MultiBracketValidation(input);
 
             //Assert
             Assert.False(actual);
