@@ -64,6 +64,21 @@
     *Method*
     - mergeLists(): merge two linked lists together
 
+- ** Chalenge 11: PseudoQueue**
+
+![whiteboard](pqWB.png)
+
+     *Approach* This challenge was to make a queue without making a queue. Instead
+     this pseudoqueue uses two stacks. The values are juggled between the two stacks
+     to alternative between the front/top and rear/bottom values. It is hard to grasp
+     at first
+
+     *Methods*
+     - Enqueue(value): adds value to the rear of the pseudoqueue
+     - Dequeue(): removes the node from the from of the pseudoqueue and returns its
+     value
+
+
 - **Challenge 13: Multi Bracket Validation**
 
 ![whiteboard](MatchingBrackets.png)
