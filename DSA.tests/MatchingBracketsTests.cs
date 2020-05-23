@@ -9,7 +9,9 @@ namespace DSA.tests
     {
         [Theory]
         [InlineData( "({[]})") ]
-       
+        [InlineData("(){}[]")]
+        [InlineData("[(hello){world}]")]
+        [InlineData("[(){{}}]")]
         public void Matching_Returns_True(string input)
         {
             //arrange
