@@ -7,15 +7,16 @@ namespace DSA.tests
 {
     public class MatchingBracketsTests
     {
-        [Fact]
-
-        public void Matching_Returns_True()
+        [Theory]
+        [InlineData( "({[]})") ]
+       
+        public void Matching_Returns_True(string input)
         {
             //arrange
-            string testString = "({[]})";
+            //string testString = "({[]})";
 
             //act
-            bool actual = MatchingBrackets.MultiBracketValidation(testString);
+            bool actual = MatchingBrackets.MultiBracketValidation(input);
 
             //Assert
             Assert.True(actual);
