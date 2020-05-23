@@ -27,7 +27,7 @@ namespace DSA
                 }
             }
 
-            if (bracketStack.Top !=null)
+            if (bracketStack.Top ==null)
             {
                 output = true;
             }
