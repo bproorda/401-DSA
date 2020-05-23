@@ -19,9 +19,14 @@ namespace DSA
                     bracketStack.push(item);
                 } else if (item == ')' || item == '}' || item == ']')
                 {
-                    if(FindMatch(item) == bracketStack.peek())
+                    if (bracketStack.Top != null)
                     {
-                        bracketStack.pop();
+                        if (FindMatch(item) == bracketStack.peek())
+                        {
+                            bracketStack.pop();
+                        }
+                        else
+                        { return false; } 
                     } else
                     { return false; }
                 }

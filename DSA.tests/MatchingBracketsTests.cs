@@ -26,6 +26,9 @@ namespace DSA.tests
 
         [Theory]
         [InlineData("({[})")]
+        [InlineData("(")]
+        [InlineData("}")]
+        [InlineData("[}")]
 
         public void Matching_Returns_False(string input)
         {
