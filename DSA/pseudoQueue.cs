@@ -1,4 +1,5 @@
-﻿using DataStructures.StackAndQueue;
+﻿using DataStructures;
+using DataStructures.StackAndQueue;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,12 +19,47 @@ namespace DSA
 
         public T dequeue()
         {
-            return default;
+            if(addStack.Top == null && subtractStack == null)
+            {
+                throw new QueueEmptyException();
+            }
+
+            while (addStack.Top != null)
+            {
+                subtractStack.push(addStack.pop());
+            }
+            T result = subtractStack.pop();
+
+            while (subtractStack.Top != null)
+            {
+                addStack.push(subtractStack.pop());
+            }
+            return result;
         }
 
-        public T peek()
+        public T peekRear()
         {
            return addStack.peek();
+        }
+
+        public T peekFront()
+        {
+            if (addStack.Top == null && subtractStack == null)
+            {
+                throw new QueueEmptyException();
+            }
+
+            while (addStack.Top != null)
+            {
+                subtractStack.push(addStack.pop());
+            }
+            T result = subtractStack.peek();
+
+            while (subtractStack.Top != null)
+            {
+                addStack.push(subtractStack.pop());
+            }
+            return result;
         }
     }
 }
