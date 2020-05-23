@@ -17,7 +17,7 @@ namespace DSA
                 if (item == '(' || item == '{' || item == '[')
                 {
                     bracketStack.push(item);
-                } else if (item == '(' || item == '{' || item == '[')
+                } else if (item == ')' || item == '}' || item == ']')
                 {
                     if(FindMatch(item) == bracketStack.peek())
                     {

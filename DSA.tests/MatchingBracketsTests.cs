@@ -21,7 +21,7 @@ namespace DSA.tests
             Assert.True(actual);
         }
 
-        [Fact(Skip = "method needs to be refactored")]
+        [Fact]
 
         public void Matching_Returns_False()
         {
