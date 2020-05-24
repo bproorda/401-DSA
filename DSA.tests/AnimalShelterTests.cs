@@ -18,5 +18,21 @@ namespace DSA.tests
             //Assert
             Assert.NotNull(testShelter);
         }
+
+        [Fact]
+
+        public void Shelter_Can_Take_Animal_Test()
+        {
+            //arrange
+            MyAnimalShelter<dog> testShelter = new MyAnimalShelter<dog>();
+            dog dakota = new dog("Dakota");
+
+            //act
+            testShelter.ArriveAtShelter<dog>(dakota);
+
+            //Assert
+            Assert.Equal("Dakota", testShelter.Front.Value.Name);
+
+        }
     }
 }
