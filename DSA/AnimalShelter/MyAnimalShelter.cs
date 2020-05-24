@@ -72,6 +72,10 @@ namespace DSA.AnimalShelter
         {
             Node previous = Front;
             Node current = Front;
+            if (current == null)
+            {
+                throw new AnimalNotFoundException();
+            }
             if (current.Value is TAnimal)
             {
                 Front = current.Next;

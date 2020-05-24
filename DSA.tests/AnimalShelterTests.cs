@@ -99,6 +99,21 @@ namespace DSA.tests
             //assert
             Assert.Equal(jazz, actual);
         }
+
+        [Fact]
+        public void Take_Home_From_Empty_Shelter_Throws_Exception_Test()
+        {
+            //arrange
+            MyAnimalShelter<Animal> testShelter = new MyAnimalShelter<Animal>();
+
+            //Assert
+            Assert.Throws<AnimalNotFoundException>(() =>
+            {
+                //act
+                var actual = testShelter.TakeHomeWhich<Animal>("either");
+            });
+
+        }
     }
 
 }
