@@ -44,12 +44,14 @@ namespace DSA.AnimalShelter
             
             if (input == "dog")
             {
-                var output = TakeHome<dog>();
+                var pet = TakeHome<dog>();
+                TAnimal output = pet as TAnimal;
                 return output;
             }
             else if( input == "cat")
             {
-                var output = TakeHome<cat>();
+                var pet = TakeHome<cat>();
+                TAnimal output = pet as TAnimal;
                 return output;
             }
             else
