@@ -54,6 +54,12 @@ namespace DSA.AnimalShelter
                 TAnimal output = pet as TAnimal;
                 return output;
             }
+            else if (input == "either")
+            {
+                var pet = TakeHome<Animal>();
+                TAnimal output = pet as TAnimal;
+                return output;
+            }
             else
             {
                 throw new AnimalNotFoundException();

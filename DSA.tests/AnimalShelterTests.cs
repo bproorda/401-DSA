@@ -77,5 +77,28 @@ namespace DSA.tests
             //assert
             Assert.Equal(seamus, actual);
         }
+
+        [Fact]
+        public void Can_Take_Home_First_Animal_Test()
+        {
+            //arrange
+            MyAnimalShelter<Animal> testShelter = new MyAnimalShelter<Animal>();
+            dog jazz = new dog("Jazz");
+            cat whiskers = new cat("Whiskers");
+            dog seamus = new dog("Seamus McFearson doodlebug O'Roorda");
+            //my Mom named this one ^
+            cat socks = new cat("Socks");
+            testShelter.ArriveAtShelter<dog>(jazz);
+            testShelter.ArriveAtShelter<cat>(whiskers);
+            testShelter.ArriveAtShelter<dog>(seamus);
+            testShelter.ArriveAtShelter<cat>(socks);
+
+            //act
+            var actual = testShelter.TakeHomeWhich<Animal>("either");
+
+            //assert
+            Assert.Equal(jazz, actual);
+        }
     }
+
 }
