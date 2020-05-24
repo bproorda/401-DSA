@@ -37,5 +37,10 @@ namespace DSA.AnimalShelter
 
 
         }
+
+        public T TakeHomeWhich(string input)
+        {
+            return default(T);
+        }
     }
 }
