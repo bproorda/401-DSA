@@ -34,5 +34,26 @@ namespace DSA.tests
             Assert.Equal("Dakota", testShelter.Front.Value.Name);
 
         }
+
+        [Fact]
+
+        public void Shelter_Can_Take_Multiple_Animals_Test()
+        {
+            //arrange
+            MyAnimalShelter<dog> testShelter = new MyAnimalShelter<dog>();
+            dog dakota = new dog("Dakota");
+            dog drew = new dog("Drew");
+            dog dutch = new dog("Dutch");
+
+            //act
+            testShelter.ArriveAtShelter<dog>(dakota);
+            testShelter.ArriveAtShelter<dog>(drew);
+            testShelter.ArriveAtShelter<dog>(dutch);
+
+            //Assert
+            Assert.Equal("Dakota", testShelter.Front.Value.Name);
+            Assert.Equal("Dutch", testShelter.Rear.Value.Name);
+
+        }
     }
 }
