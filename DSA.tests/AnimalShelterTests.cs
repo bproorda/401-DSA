@@ -72,7 +72,7 @@ namespace DSA.tests
             testShelter.ArriveAtShelter<cat>(socks);
 
             //act
-            var actual = testShelter.TakeHomeWhich("dog");
+            var actual = testShelter.TakeHomeWhich<Animal>("dog");
 
             //assert
             Assert.Equal(seamus, actual);

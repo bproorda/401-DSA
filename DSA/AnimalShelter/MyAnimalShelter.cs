@@ -64,9 +64,36 @@ namespace DSA.AnimalShelter
         public TAnimal TakeHome<TAnimal>()
             where   TAnimal : Animal
         {
+            Node previous = Front;
+            Node current = Front;
+            if (current.Value is TAnimal)
+            {
+                Front = current.Next;
+                current.Next = null;
+                return current.Value as TAnimal;
+            } else
+            {
+                current = current.Next;
+            }
+
+            while (current != null)
+            {
+                if (current.Value is TAnimal)
+                {
+                    previous.Next = current.Next;
+                    current.Next = null;
+                    return current.Value as TAnimal;
+                }
+                else
+                {
+                    previous = previous.Next;
+                    current = current.Next;
+                }
+            }
 
 
-            return default(TAnimal);
+
+            throw new AnimalNotFoundException();
         }
     }
     public class AnimalNotFoundException : Exception
