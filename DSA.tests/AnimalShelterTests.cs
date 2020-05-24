@@ -4,7 +4,8 @@ using System.Text;
 
 namespace DSA.tests
 {
-    class AnimalShelterTests
+   public  class AnimalShelterTests<T>
     {
+
     }
 }
