@@ -38,9 +38,37 @@ namespace DSA.AnimalShelter
 
         }
 
-        public T TakeHomeWhich(string input)
+        public TAnimal TakeHomeWhich<TAnimal>(string input)
+            where TAnimal : Animal 
         {
-            return default(T);
+            
+            if (input == "dog")
+            {
+                var output = TakeHome<dog>();
+                return output;
+            }
+            else if( input == "cat")
+            {
+                var output = TakeHome<cat>();
+                return output;
+            }
+            else
+            {
+                throw new AnimalNotFoundException();
+            }
+           
         }
+
+        public TAnimal TakeHome<TAnimal>()
+            where   TAnimal : Animal
+        {
+
+
+            return default(TAnimal);
+        }
+    }
+    public class AnimalNotFoundException : Exception
+    {
+
     }
 }
