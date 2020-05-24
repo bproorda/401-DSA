@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DSA.AnimalShelter
 {
-    public class AnimalShelter<T>
+    public class MyAnimalShelter<T>
     {
         public Node Front { get; set; } = null;
         public Node Rear { get; set; } = null;
