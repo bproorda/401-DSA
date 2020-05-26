@@ -26,7 +26,7 @@ namespace DataStructures
             Node current = Root;
             PreOrder(treeStack, current);
 
-            for (int i = (Count - 1); i >= 0; i++)
+            for (int i = (Count - 1); i >= 0; i--)
             {
                 result[i] = treeStack.pop();
             }

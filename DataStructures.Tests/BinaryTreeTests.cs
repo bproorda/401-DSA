@@ -47,5 +47,25 @@ namespace DataStructures.Tests
             //Assert
             Assert.Equal(5, myTree.Root.Left.Value);
         }
+
+        [Fact]
+
+        public void PreOrder_Test()
+        {
+            //arrange
+            BinarySearchTree myTree = new BinarySearchTree();
+            myTree.add(10);
+            myTree.add(5);
+            myTree.add(4);
+            myTree.add(13);
+            int[] expected = new int[] { 10, 5, 4, 13 };
+
+            //act
+            int[] actual = myTree.PreOrderHandler();
+
+            //Assert
+            Assert.Equal(expected, actual);
+
+        }
     }
 }
