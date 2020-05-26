@@ -17,4 +17,9 @@ namespace DataStructures
         }
 
     }
+
+    public class BinarySearchTree : BinaryTree<int>
+    {
+
+    }
 }
