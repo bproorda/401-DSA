@@ -19,18 +19,34 @@ namespace DataStructures
 
         }
 
-        public int[] PreOrder()
+        public int[] PreOrderHandler()
         {
+            int[] result = new int[Count];
             MyStack<int> treeStack = new MyStack<int>();
             Node current = Root;
-            for (int i = 0; i < Count; i++)
+            PreOrder(treeStack, current);
+
+            for (int i = (Count - 1); i >= 0; i++)
             {
-                treeStack.push(current.Value);
-
-
+                result[i] = treeStack.pop();
             }
 
-            return default;
+            return result;
+        }
+
+        public void PreOrder(MyStack<int> treestack, Node current)
+        {
+            treestack.push(current.Value);
+
+            if (current.Left != null)
+            {
+                PreOrder(treestack, current.Left);
+            }
+            if (current.Right != null)
+            {
+                PreOrder(treestack, current.Right);
+            }
+
         }
 
     }
