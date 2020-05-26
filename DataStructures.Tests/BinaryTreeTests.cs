@@ -32,5 +32,20 @@ namespace DataStructures.Tests
             //Assert
             Assert.Equal(4, myTree.Root.Value);
         }
+
+        [Fact]
+
+        public void Can_Add_Multiple_To_BST_Test()
+        {
+            //arrange
+            BinarySearchTree myTree = new BinarySearchTree();
+
+            //act
+            myTree.add(10);
+            myTree.add(5);
+
+            //Assert
+            Assert.Equal(5, myTree.Root.Left.Value);
+        }
     }
 }
