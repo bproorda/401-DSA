@@ -17,5 +17,20 @@ namespace DataStructures.Tests
             //assert
             Assert.NotNull(myTree);
         }
+
+
+        [Fact]
+
+        public void Can_Add_To_BST_Test()
+        {
+            //arrange
+            BinarySearchTree myTree = new BinarySearchTree();
+
+            //act
+            myTree.add(4);
+
+            //Assert
+            Assert.Equal(4, myTree.Root.Value);
+        }
     }
 }

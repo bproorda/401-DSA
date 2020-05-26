@@ -9,11 +9,11 @@ namespace DataStructures
     {
         public Node Root { get; set; }
 
-        public class Node 
+        public class Node
         {
-           public int Value { get; set; }
+            public int Value { get; set; }
             public Node Left { get; set; }
-          public  Node Right { get; set; }
+            public Node Right { get; set; }
 
         }
 
@@ -21,18 +21,18 @@ namespace DataStructures
 
     public class BinarySearchTree : BinaryTree
     {
-   
 
-    public void add(int value)
+
+        public void add(int value)
         {
             Node newNode = new Node();
             newNode.Value = value;
-        if (Root == null)
-        {
-            Root = newNode;
-        } else
-        {
-            Node current = Root;
+            if (Root == null)
+            {
+                Root = newNode;
+            } else
+            {
+                Node current = Root;
                 bool toggle = true;
                 while (toggle)
                 {
@@ -61,9 +61,9 @@ namespace DataStructures
 
 
                 }
-        }
+            }
         }
 
-    }
-    }
-}
+    
+}   }
+
