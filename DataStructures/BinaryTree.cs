@@ -1,4 +1,5 @@
 ﻿using DataStructures;
+using DataStructures.StackAndQueue;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,6 +9,7 @@ namespace DataStructures
     public class BinaryTree
     {
         public Node Root { get; set; }
+        public int Count { get; set; }
 
         public class Node
         {
@@ -15,6 +17,20 @@ namespace DataStructures
             public Node Left { get; set; }
             public Node Right { get; set; }
 
+        }
+
+        public int[] PreOrder()
+        {
+            MyStack<int> treeStack = new MyStack<int>();
+            Node current = Root;
+            for (int i = 0; i < Count; i++)
+            {
+                treeStack.push(current.Value);
+
+
+            }
+
+            return default;
         }
 
     }
@@ -62,6 +78,7 @@ namespace DataStructures
 
                 }
             }
+            Count++;
         }
 
     
