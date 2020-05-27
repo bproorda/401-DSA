@@ -67,5 +67,24 @@ namespace DataStructures.Tests
             Assert.Equal(expected, actual);
 
         }
+
+        [Fact]
+
+        public void Breadth_Travesal_Test()
+        {
+            //arrange
+            BinarySearchTree myTree = new BinarySearchTree();
+            myTree.add(10);
+            myTree.add(5);
+            myTree.add(4);
+            myTree.add(13);
+            int[] expected = new int[] { 10, 5, 13, 4 };
+
+            //act
+            List<int> actual = myTree.Breadth();
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }

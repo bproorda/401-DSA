@@ -62,7 +62,7 @@ namespace DataStructures
 
         public void Breadth(myQueue<Node> treeQueue, List<int> result,  Node current)
         {
-            while (treeQueue.peek() != null)
+            while (treeQueue.Front != null)
             {
                 Node front = treeQueue.deQueue();
                 result.Add(front.Value);
