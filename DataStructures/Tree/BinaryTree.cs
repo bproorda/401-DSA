@@ -21,6 +21,11 @@ namespace DataStructures
 
         public int[] DepthHandler(string choice)
         {
+            if (Root == null)
+            {
+                throw new TreeEmptyException();
+            }
+
             int[] result = new int[Count];
             MyStack<int> treeStack = new MyStack<int>();
             Node current = Root;
@@ -98,6 +103,11 @@ namespace DataStructures
 
         public List<int> Breadth()
         {
+            if (Root == null)
+            {
+                throw new TreeEmptyException();
+            }
+
             List<int> result = new List<int>();
             myQueue<Node> treeQueue = new myQueue<Node>();
             Node current = Root;
@@ -176,6 +186,43 @@ namespace DataStructures
             Count++;
         }
 
+        public bool Contains(int value)
+        {
+            if (Root == null)
+            {
+                throw new TreeEmptyException();
+            }
+
+            Node current = Root;
+
+            while (current != null)
+            {
+                if (current.Value == value)
+                {
+                    return true;
+                }
+                else if (current.Value > value)
+                {
+                    current = current.Left;
+                }
+                else if (current.Value < value)
+                {
+                    current = current.Right;
+                }
+
+            }
+
+            return false;
+        }
+
     
-}   }
+
+    }
+    public class TreeEmptyException : Exception
+    {
+
+    }
+
+}
+
 
