@@ -47,6 +47,10 @@ namespace DataStructures
                 Node temp = Front;
                 Front = Front.Next;
                 temp.Next = null;
+                if (Rear == temp)
+                {
+                    Rear = null;
+                }
                 return temp.Value;
             }
         }
