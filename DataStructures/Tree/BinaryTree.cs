@@ -62,6 +62,38 @@ namespace DataStructures
 
         }
 
+        public void InOrder(MyStack<int> treestack, Node current)
+        {
+            if (current.Left != null)
+            {
+                InOrder(treestack, current.Left);
+            }
+
+            treestack.push(current.Value);
+
+            if (current.Right != null)
+            {
+                InOrder(treestack, current.Right);
+            }
+
+        }
+
+        public void PostOrder(MyStack<int> treestack, Node current)
+        {
+            if (current.Left != null)
+            {
+                PostOrder(treestack, current.Left);
+            }
+
+
+            if (current.Right != null)
+            {
+                PostOrder(treestack, current.Right);
+            }
+
+            treestack.push(current.Value);
+        }
+
 
 
         public List<int> Breadth()
