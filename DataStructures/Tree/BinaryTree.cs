@@ -30,10 +30,10 @@ namespace DataStructures
                     PreOrder(treeStack, current);
                     break;
                 case "inorder":
-                    PreOrder(treeStack, current);
+                    InOrder(treeStack, current);
                     break;
                 case "postorder":
-                    PreOrder(treeStack, current);
+                    PostOrder(treeStack, current);
                     break;
                 default:
                     break;

@@ -67,6 +67,45 @@ namespace DataStructures.Tests
             Assert.Equal(expected, actual);
 
         }
+        [Fact]
+
+        public void InOrder_Test()
+        {
+            //arrange
+            BinarySearchTree myTree = new BinarySearchTree();
+            myTree.add(10);
+            myTree.add(5);
+            myTree.add(4);
+            myTree.add(13);
+            int[] expected = new int[] { 4, 5, 13, 10  };
+
+            //act
+            int[] actual = myTree.DepthHandler("postorder");
+
+            //Assert
+            Assert.Equal(expected, actual);
+
+        }
+
+        [Fact]
+
+        public void PostOrder_Test()
+        {
+            //arrange
+            BinarySearchTree myTree = new BinarySearchTree();
+            myTree.add(10);
+            myTree.add(5);
+            myTree.add(4);
+            myTree.add(13);
+            int[] expected = new int[] { 4, 5, 13, 10 };
+
+            //act
+            int[] actual = myTree.DepthHandler("postorder");
+
+            //Assert
+            Assert.Equal(expected, actual);
+
+        }
 
         [Fact]
 
