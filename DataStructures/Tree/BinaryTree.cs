@@ -49,6 +49,38 @@ namespace DataStructures
 
         }
 
+        public List<int> Breadth()
+        {
+            List<int> result = new List<int>();
+            myQueue<Node> treeQueue = new myQueue<Node>();
+            Node current = Root;
+            treeQueue.enQueue(current);
+            Breadth(treeQueue, result,  current);
+
+            return result;
+        }
+
+        public void Breadth(myQueue<Node> treeQueue, List<int> result,  Node current)
+        {
+            while (treeQueue.peek() != null)
+            {
+                Node front = treeQueue.deQueue();
+                result.Add(front.Value);
+
+                if (front.Left != null)
+                {
+                    treeQueue.enQueue(front.Left);
+                }
+
+                if (front.Right != null)
+                {
+                    treeQueue.enQueue(front.Right);
+                }
+
+            }
+
+        }
+
     }
 
     public class BinarySearchTree : BinaryTree
