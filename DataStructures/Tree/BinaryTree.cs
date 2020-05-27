@@ -19,12 +19,25 @@ namespace DataStructures
 
         }
 
-        public int[] PreOrderHandler()
+        public int[] DepthHandler(string choice)
         {
             int[] result = new int[Count];
             MyStack<int> treeStack = new MyStack<int>();
             Node current = Root;
-            PreOrder(treeStack, current);
+            switch (choice)
+            {
+                case "preorder":
+                    PreOrder(treeStack, current);
+                    break;
+                case "inorder":
+                    PreOrder(treeStack, current);
+                    break;
+                case "postorder":
+                    PreOrder(treeStack, current);
+                    break;
+                default:
+                    break;
+            }
 
             for (int i = (Count - 1); i >= 0; i--)
             {
@@ -48,6 +61,8 @@ namespace DataStructures
             }
 
         }
+
+
 
         public List<int> Breadth()
         {

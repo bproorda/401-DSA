@@ -61,7 +61,7 @@ namespace DataStructures.Tests
             int[] expected = new int[] { 10, 5, 4, 13 };
 
             //act
-            int[] actual = myTree.PreOrderHandler();
+            int[] actual = myTree.DepthHandler("preorder");
 
             //Assert
             Assert.Equal(expected, actual);
