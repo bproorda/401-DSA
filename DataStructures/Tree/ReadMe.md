@@ -16,6 +16,22 @@ has its own children all the way down the tree.
         - InOrder()
         - PostOrder
       - Breadth(): completes a breadth first traversal and returns a list on integers
+      - FindMaxValue(): uses a pre-order traversal to find the max value in a tree
     - Binary Search Tree
       - Add(value): adds the value according the BST rules
       - Contains(value): examines the tree to determine if it contains the value and returns a boolean
+
+
+
+
+
+- WhiteBoards:
+
+  - Breadth WhiteBoard
+
+  ![wb](Breadth.png)
+
+
+  - Find Max Value
+
+  ![wb](MaxValueWB.jpg)
