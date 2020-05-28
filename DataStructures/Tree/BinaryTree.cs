@@ -138,6 +138,40 @@ namespace DataStructures
 
         }
 
+        public int FindMaxValue()
+        {
+            if (Root == null)
+            {
+                throw new TreeEmptyException();
+            }
+            
+            MyStack<int> maxStack = new MyStack<int>();
+            maxStack.push(0);
+            Node current = Root;
+            FindMaxValue_PreOrder(maxStack, current);
+
+            return maxStack.Top.Value;
+        }
+
+        public void FindMaxValue_PreOrder(MyStack<int> maxStack, Node current)
+        {
+            if (current.Value > maxStack.Top.Value)
+            {
+                maxStack.pop();
+                maxStack.push(current.Value);
+            }
+
+            if (current.Left != null)
+            {
+                PreOrder(maxStack, current.Left);
+            }
+            if (current.Right != null)
+            {
+                PreOrder(maxStack, current.Right);
+            }
+
+        }
+
     }
 
     public class BinarySearchTree : BinaryTree
@@ -214,6 +248,8 @@ namespace DataStructures
 
             return false;
         }
+
+       
 
     
 
