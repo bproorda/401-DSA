@@ -144,5 +144,24 @@ namespace DataStructures.Tests
             Assert.True(actual);
 
         }
+
+        [Fact]
+
+        public void Finding_Max_Value_Test()
+        {
+            //arrange
+            BinarySearchTree myTree = new BinarySearchTree();
+            myTree.add(10);
+            myTree.add(5);
+            myTree.add(4);
+            myTree.add(13);
+
+            //act
+            int actual = myTree.FindMaxValue();
+
+            //Assert
+            Assert.Equal(13, actual);
+
+        }
     }
 }
