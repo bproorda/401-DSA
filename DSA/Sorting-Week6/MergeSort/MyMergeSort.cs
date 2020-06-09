@@ -18,7 +18,10 @@ namespace DSA.Sorting_Week6.MergeSort
                 for (int i = 0; i < left.Length; i++)
                 {
                     left[i] = arr[i];
-                    right[i] = arr[i + mid ];
+                }
+                for (int j = 0; j < right.Length; j++)
+                {
+                    right[j] = arr[j + mid];
                 }
                 MergeSort(left);
                 MergeSort(right);
