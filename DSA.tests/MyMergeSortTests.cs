@@ -22,5 +22,19 @@ namespace DSA.tests
             //Assert
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Merge_Sort_Test_Odd()
+        {
+            //arrange
+            int[] test = new int[] { 4, 7, 3, 2, 11 };
+            int[] expected = new int[] { 2, 3, 4, 7, 11 };
+
+            //act
+            int[] actual = MyMergeSort.MergeSort(test);
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }
