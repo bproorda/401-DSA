@@ -23,5 +23,20 @@ namespace DSA.tests
             Assert.Equal(expected, actual);
 
         }
+
+        [Fact]
+        public void Empty_Input_Throws_Error()
+        {
+            //arrange
+            int[] input = new int[0];
+            
+            //assert
+            Assert.Throws<EmptyArrayException>(() =>
+            {
+                //act
+                var actual = InsertSort.InsertionSort(input);
+            });
+
+        }
     }
 }
