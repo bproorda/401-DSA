@@ -6,5 +6,10 @@ namespace DSA.Sorting_Week6
 {
     public class InsertSort
     {
+
+        public static int[] InsertionSort(int[] input)
+        {
+            return default;
+        }
     }
 }
