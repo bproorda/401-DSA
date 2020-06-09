@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DSA.Sorting_Week6.MergeSort
 {
-    class MyMergeSort
+   public class MyMergeSort
     {
         public static int[] MergeSort(int[] arr)
         {
@@ -18,7 +18,7 @@ namespace DSA.Sorting_Week6.MergeSort
                 for (int i = 0; i < left.Length; i++)
                 {
                     left[i] = arr[i];
-                    right[i] = arr[i + mid + 1];
+                    right[i] = arr[i + mid ];
                 }
                 MergeSort(left);
                 MergeSort(right);
