@@ -8,28 +8,37 @@ namespace DSA.Sorting_Week6.MergeSort
     {
         public static int[] MergeSort(int[] arr)
         {
-            int n = arr.Length;
-
-            if (n > 1)
+            if (arr.Length != 0)
             {
-                int mid = n / 2;
-                int[] left = new int[mid];
-                int[] right = new int[n - mid];
-                for (int i = 0; i < left.Length; i++)
+                int n = arr.Length;
+
+                if (n > 1)
                 {
-                    left[i] = arr[i];
+                    int mid = n / 2;
+                    int[] left = new int[mid];
+                    int[] right = new int[n - mid];
+                    for (int i = 0; i < left.Length; i++)
+                    {
+                        left[i] = arr[i];
+                    }
+                    for (int j = 0; j < right.Length; j++)
+                    {
+                        right[j] = arr[j + mid];
+                    }
+                    MergeSort(left);
+                    MergeSort(right);
+                    return Merge(left, right, arr);
                 }
-                for (int j = 0; j < right.Length; j++)
-                {
-                    right[j] = arr[j + mid];
-                }
-                MergeSort(left);
-                MergeSort(right);
-                return  Merge(left, right, arr);
+
+            } else
+            {
+                throw new EmptyArrayException();
             }
             return default;
             
         }
+
+    
 
         public static int[] Merge(int[] left, int[] right, int[] arr)
         {
@@ -73,4 +82,8 @@ namespace DSA.Sorting_Week6.MergeSort
             return arr;
         }
     }
+    /*public class EmptyArrayException : Exception
+    {
+
+    }*/
 }
