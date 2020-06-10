@@ -1,4 +1,4 @@
-       For the second sort, we have the Merge Sort!. While is more efficient than Insertion Sort, it is 
+ For the second sort, we have the Merge Sort!. While is more efficient than Insertion Sort, it is 
 more complicated, and includes the dreaded word *recursion*. This refers to a method calling itself inside 
 of itself. See not confusing at all! More on that later. The Merge Sort is essentially Divide and Conquer.
 The basic principle is that you divide the array again and again, recursively, until you have each element 
