@@ -12,8 +12,8 @@ namespace DSA.tests
         public void Does_Quick_Sort_Work()
         {
             //arrange 
-            int[] test = new int[] { 8, 5, 43, 78, 29, 36, 13 };
-            int[] expected = new int[] { 5, 8, 13, 36, 29, 43, 78 };
+            int[] test = new int[] { 8, 5, 43, 78, 29};
+            int[] expected = new int[] { 5, 8, 29, 43, 78};
 
             //act
             int[] actual = MyQuickSort.QuickSort(test);

@@ -10,25 +10,26 @@ namespace DSA.Sorting_Week6.QuickSort
         public static int[] QuickSort(int[] arr)
         {
             
-            arr = QuickSort(arr, 0, arr.Length - 1);
+            QuickSort(arr, 0, arr.Length - 1);
             return arr;
         }
 
-        private static int[] QuickSort(int[] arr, int low, int high)
+        private static void QuickSort(int[] arr, int low, int high)
         {
-            int nextPivot = Partitioner(arr, low, high);
+            
             if (low < high)
             {
-               arr = QuickSort(arr, low, nextPivot - 1);
-                arr = QuickSort(arr, nextPivot + 1, high);
+                int pivotIndex = Partitioner(arr, low, high);
+                QuickSort(arr, low, pivotIndex - 1);
+                 QuickSort(arr, pivotIndex + 1, high);
             }
-            return arr;
+            
         }
 
         private static int Partitioner(int[] arr, int low, int high)
         {
-            int i = low - 1;
             int pivot = arr[high];
+            int i = (low - 1);
 
             for (int j = low; j < high; j++)
             {
@@ -39,12 +40,14 @@ namespace DSA.Sorting_Week6.QuickSort
                     arr[i] = arr[j];
                     arr[j] = temp;
                 }
-                int temp2 = arr[i + 1];
-                arr[i + 1] = arr[high];
-                arr[high] = temp2;
             }
 
-            return i +1;
+            int temp1 = arr[i + 1];
+            arr[i + 1] = arr[high];
+            arr[high] = temp1;
+
+            return i + 1;
+
         }
     }
 }
