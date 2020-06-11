@@ -28,8 +28,9 @@ The method begins by setting the lower and upper bounds, in the intial call it w
 array minus one. After this it creates two counters, i and j, and a for loop to travese over the whole array using 
 the j counter. The i counter is a kind of pointer keeping track of the last position where it swapped elements. 
 
-Then it begins comparing each element to the pivot. If the element is less than the pivot then
-it swaps the element at i with the element at j. Then it increments *both* counters
+Then it begins comparing each element to the pivot. If the element is less than the pivot, it first increases, 
+increments, the i counter. Be careful, order is very important with this one! Then it will swap the element 
+at i with the element at j. To try to make it a little more efficient if i equals j, it does not swap. 
 
 if the element is greater than the pivot then there is no swapping and *only* j increases. 
 
