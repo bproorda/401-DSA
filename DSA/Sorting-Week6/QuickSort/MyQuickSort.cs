@@ -36,15 +36,15 @@ namespace DSA.Sorting_Week6.QuickSort
                 if (arr[j] < pivot)
                 {
                     i++;
-                    int temp = arr[i];
+                    int temp1 = arr[i];
                     arr[i] = arr[j];
-                    arr[j] = temp;
+                    arr[j] = temp1;
                 }
             }
-
-            int temp1 = arr[i + 1];
+            // uses arr[i +1] to swap the pivot with first element greater than it
+            int temp2 = arr[i + 1];
             arr[i + 1] = arr[high];
-            arr[high] = temp1;
+            arr[high] = temp2;
 
             return i + 1;
 
