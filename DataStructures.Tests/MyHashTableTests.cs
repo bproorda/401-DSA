@@ -44,6 +44,22 @@ namespace DataStructures.Tests
 
             //assert
             Assert.NotNull(testHT.buckets[thisIndex]);
+        }
+
+        [Fact]
+        public void No_Collision_Test()
+        {
+            //arrange
+            MyHashTable<int> testHT = new MyHashTable<int>(1024);
+            int thisIndex = MyHashTable<int>.GetHashCode("Diana") % 1024;
+
+            //act
+            testHT.Add("Diana", 678);
+            testHT.Add("Diana", 978);
+
+            //assert
+            Assert.NotNull(testHT.buckets[thisIndex].Next);
+            //Assert.Equal(978, testHT.buckets[thisIndex].Next.Value);
 
         }
     }
