@@ -78,5 +78,31 @@ namespace DataStructures.Tests
             //assert
             Assert.Equal(678, actual);
         }
+        [Fact]
+        public void Contains_Returns_True_Test()
+        {
+            //arrange
+            MyHashTable<int> testHT = new MyHashTable<int>(1024);
+            testHT.Add("Diana", 678);
+
+            //act
+            bool actual = testHT.Contains("Diana");
+
+            //assert
+            Assert.True(actual);
+        }
+        [Fact]
+        public void Contains_Returns_False_Test()
+        {
+            //arrange
+            MyHashTable<int> testHT = new MyHashTable<int>(1024);
+            testHT.Add("Diana", 678);
+
+            //act
+            bool actual = testHT.Contains("Skip");
+
+            //assert
+            Assert.False(actual);
+        }
     }
 }
