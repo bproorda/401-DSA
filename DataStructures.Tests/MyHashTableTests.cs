@@ -8,14 +8,16 @@ namespace DataStructures.Tests
 {
     public class MyHashTableTests
     {
-        [Fact(Skip ="Not Ready Yet")]
+        [Fact]
         public void Get_Hash_Code_Works()
         {
+            //arrange
+            MyHashTable<int> testHT = new MyHashTable<int>(1024);
             //act
-            //int testHash = MyEqualityComparer.GetHashCode("Brennan");
+            int testHash = MyHashTable<int>.GetHashCode("Brennan");
 
             //assert
-            //Assert.Equal(11, testHash);
+            Assert.Equal(1770728717, testHash);
         }
     }
 }

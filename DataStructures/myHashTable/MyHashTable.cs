@@ -6,11 +6,14 @@ namespace DataStructures.myHashTable
 {
     public class MyHashTable<T>
     {
-        public MyEqualityComparer myEqualityComparer;
+        //public MyEqualityComparer myEqualityComparer;
 
-        public MyHashTable(MyEqualityComparer myEqualityComparer)
+        public Node[] buckets { get; set; }
+
+        public MyHashTable(int bucketCount)
         {
-            this.myEqualityComparer = myEqualityComparer;
+            //myEqualityComparer = MyEqualityComparer;
+            this.buckets = new Node[bucketCount];
         }
 
 
@@ -27,6 +30,25 @@ namespace DataStructures.myHashTable
                 this.Key = key;
                 this.Value = value;
             }
+        }
+
+        public static int GetHashCode(string key)
+        {
+            int keyLength = key.Length;
+
+            int asciiChar;
+            int result = 0;
+
+            for (int i = 0; i < keyLength; i++)
+            {
+                asciiChar = (int)key[i];
+                result += (int)Math.Pow(asciiChar, (keyLength - i));
+            }
+            if (result < 0)
+            {
+                result  = result * -1;
+            }
+            return result * 613;
         }
     }
 }
