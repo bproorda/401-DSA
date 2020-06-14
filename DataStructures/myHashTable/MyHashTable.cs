@@ -34,7 +34,7 @@ namespace DataStructures.myHashTable
             }
         }
 
-        public static int GetHashCode(string key)
+        public  int GetHashCode(string key)
         {
             int keyLength = key.Length;
 
@@ -52,14 +52,13 @@ namespace DataStructures.myHashTable
             }
             int divisor = 59233;
             result = result / divisor;
+            result = result % bucketCount;
             return result;
         }
 
         public void Add(string key, T value)
         {
-            int hashCode = GetHashCode(key);
-
-            int hashIndex = hashCode % bucketCount;
+            int hashIndex = GetHashCode(key);
 
             if (buckets[hashIndex] == null)
             {
@@ -74,8 +73,7 @@ namespace DataStructures.myHashTable
 
         public T Get(string key)
         {
-            int hashCode = GetHashCode(key);
-            int index = hashCode % bucketCount;
+            int index = GetHashCode(key);
             Node bucket = buckets[index];
             if (bucket == null)
             {

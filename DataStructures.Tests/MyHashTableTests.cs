@@ -14,18 +14,21 @@ namespace DataStructures.Tests
             //arrange
             MyHashTable<int> testHT = new MyHashTable<int>(1024);
             //act
-            int testHash = MyHashTable<int>.GetHashCode("Brennan");
+            int testHash = testHT.GetHashCode("Brennan");
 
             //assert
-            Assert.Equal(33760, testHash);
+            Assert.Equal(992, testHash);
         }
 
         [Fact]
         public void Equal_Key_Equal_Hash_Code_Test()
         {
+            //arrange
+            MyHashTable<int> testHT = new MyHashTable<int>(1024);
+
             //act
-            int A = MyHashTable<int>.GetHashCode("Brennan");
-            int B = MyHashTable<int>.GetHashCode("Brennan");
+            int A = testHT.GetHashCode("Brennan");
+            int B = testHT.GetHashCode("Brennan");
 
             //assert
             Assert.Equal(A, B);
@@ -37,7 +40,7 @@ namespace DataStructures.Tests
         {
             //arrange
             MyHashTable<int> testHT = new MyHashTable<int>(1024);
-            int thisIndex = MyHashTable<int>.GetHashCode("Diana") % 1024;
+            int thisIndex = testHT.GetHashCode("Diana") % 1024;
 
             //act
             testHT.Add("Diana", 678);
@@ -51,7 +54,7 @@ namespace DataStructures.Tests
         {
             //arrange
             MyHashTable<int> testHT = new MyHashTable<int>(1024);
-            int thisIndex = MyHashTable<int>.GetHashCode("Diana") % 1024;
+            int thisIndex = testHT.GetHashCode("Diana") % 1024;
 
             //act
             testHT.Add("Diana", 678);
