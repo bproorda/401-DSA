@@ -17,7 +17,22 @@ namespace DataStructures.Tests
             int testHash = MyHashTable<int>.GetHashCode("Brennan");
 
             //assert
-            Assert.Equal(1770728717, testHash);
+            Assert.Equal(33760, testHash);
+        }
+
+        [Fact]
+        public void Add_Works_Test()
+        {
+            //arrange
+            MyHashTable<int> testHT = new MyHashTable<int>(1024);
+            int thisIndex = MyHashTable<int>.GetHashCode("Diana") % 1024;
+
+            //act
+            testHT.Add("Diana", 678);
+
+            //assert
+            Assert.NotNull(testHT.buckets[thisIndex]);
+
         }
     }
 }

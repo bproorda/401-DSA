@@ -50,7 +50,9 @@ namespace DataStructures.myHashTable
             {
                 result  = result * -1;
             }
-            return result * 613;
+            int divisor = 59233;
+            result = result / divisor;
+            return result;
         }
 
         public void Add(string key, T value)
@@ -59,9 +61,10 @@ namespace DataStructures.myHashTable
 
             int hashIndex = hashCode % bucketCount;
 
-            if (buckets[hashIndex].Value == null)
+            if (buckets[hashIndex] == null)
             {
-                buckets[hashIndex].Value = value;
+                Node newNode = new Node(key, value);
+                buckets[hashIndex] = newNode;
             } else
             {
                 Node newNode = new Node(key, value);
