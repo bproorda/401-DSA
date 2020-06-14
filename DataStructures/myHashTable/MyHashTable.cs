@@ -9,10 +9,12 @@ namespace DataStructures.myHashTable
         //public MyEqualityComparer myEqualityComparer;
 
         public Node[] buckets { get; set; }
+        public int bucketCount { get; set; }
 
         public MyHashTable(int bucketCount)
         {
             //myEqualityComparer = MyEqualityComparer;
+            this.bucketCount = bucketCount;
             this.buckets = new Node[bucketCount];
         }
 
@@ -49,6 +51,22 @@ namespace DataStructures.myHashTable
                 result  = result * -1;
             }
             return result * 613;
+        }
+
+        public void Add(string key, T value)
+        {
+            int hashCode = GetHashCode(key);
+
+            int hashIndex = hashCode % bucketCount;
+
+            if (buckets[hashIndex].Value == null)
+            {
+                buckets[hashIndex].Value = value;
+            } else
+            {
+                Node newNode = new Node(key, value);
+                buckets[hashIndex].Next = newNode;
+            }
         }
     }
 }
