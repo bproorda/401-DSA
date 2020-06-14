@@ -95,6 +95,28 @@ namespace DataStructures.myHashTable
             throw new KeyNotFoundException();
         }
 
-        
+        public bool Contains(string key)
+        {
+            int index = GetHashCode(key);
+            Node bucket = buckets[index];
+            if (bucket == null)
+            {
+                return false;
+            } else
+            {
+                while (bucket != null)
+                {
+                    if (bucket.Key == key)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        bucket = bucket.Next;
+                    }
+                }
+            }
+            return false;
+        }
     }
 }
