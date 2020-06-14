@@ -104,5 +104,21 @@ namespace DataStructures.Tests
             //assert
             Assert.False(actual);
         }
+        [Fact]
+        public void Get_With_No_Matching_Key_Throws_Error_Test()
+        {
+            //arrange
+            MyHashTable<int> testHT = new MyHashTable<int>(1024);
+            testHT.Add("Diana", 678);
+
+
+
+            //assert
+            Assert.Throws<KeyNotFoundException>(() =>
+            {
+                //act
+                int actual = testHT.Get("Skip");
+            });
+        }
     }
 }
