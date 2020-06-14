@@ -21,6 +21,18 @@ namespace DataStructures.Tests
         }
 
         [Fact]
+        public void Equal_Key_Equal_Hash_Code_Test()
+        {
+            //act
+            int A = MyHashTable<int>.GetHashCode("Brennan");
+            int B = MyHashTable<int>.GetHashCode("Brennan");
+
+            //assert
+            Assert.Equal(A, B);
+
+        }
+
+        [Fact]
         public void Add_Works_Test()
         {
             //arrange
