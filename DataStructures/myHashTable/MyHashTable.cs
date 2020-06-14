@@ -71,5 +71,32 @@ namespace DataStructures.myHashTable
                 buckets[hashIndex].Next = newNode;
             }
         }
+
+        public T Get(string key)
+        {
+            int hashCode = GetHashCode(key);
+            int index = hashCode / bucketCount;
+            Node bucket = buckets[index];
+            if (bucket == null)
+            {
+                throw new KeyNotFoundException();
+            } else
+            {
+                while(bucket != null)
+                {
+                    if (bucket.Key == key)
+                    {
+                        return bucket.Value;
+                    } else
+                    {
+                        bucket = bucket.Next;
+                    }
+                }
+            }
+
+            throw new KeyNotFoundException();
+        }
+
+        
     }
 }
