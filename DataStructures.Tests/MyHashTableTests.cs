@@ -62,5 +62,18 @@ namespace DataStructures.Tests
             //Assert.Equal(978, testHT.buckets[thisIndex].Next.Value);
 
         }
+        [Fact]
+        public void Get_Works_Test()
+        {
+            //arrange
+            MyHashTable<int> testHT = new MyHashTable<int>(1024);
+            testHT.Add("Diana", 678);
+
+            //act
+            int actual = testHT.Get("Diana");
+
+            //assert
+            Assert.Equal(678, actual);
+        }
     }
 }
