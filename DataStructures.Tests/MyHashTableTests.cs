@@ -9,6 +9,17 @@ namespace DataStructures.Tests
     public class MyHashTableTests
     {
         [Fact]
+        public void Min_Bucket_Count_Test()
+        {
+            //arrange
+            MyHashTable<int> testHT = new MyHashTable<int>(124);
+
+            //act
+            int thisBucketCount = testHT.bucketCount;
+
+            Assert.Equal(1024, thisBucketCount);
+        }
+        [Fact]
         public void Get_Hash_Code_Works()
         {
             //arrange

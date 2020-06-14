@@ -14,7 +14,7 @@ namespace DataStructures.myHashTable
         public MyHashTable(int bucketCount)
         {
             myEqualityComparer = new MyEqualityComparer();
-            this.bucketCount = bucketCount;
+            this.bucketCount = ((bucketCount > 1024) ? bucketCount : 1024);
             this.buckets = new Node[bucketCount];
         }
 
