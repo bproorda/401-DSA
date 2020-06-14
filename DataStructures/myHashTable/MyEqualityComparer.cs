@@ -11,21 +11,31 @@ namespace DataStructures.myHashTable
             throw new NotImplementedException();
         }
 
-        public int GetHashCode(string key)
+        public int GetHashCode(string key, int bucketCount)
         {
             int keyLength = key.Length;
 
-            //int[] asciiArr = new int[keyLength];
             int asciiChar;
             int result = 0;
 
             for (int i = 0; i < keyLength; i++)
             {
-                //asciiArr[i] = (int)key[i];
                 asciiChar = (int)key[i];
                 result += (int)Math.Pow(asciiChar, (keyLength - i));
             }
-            return result * 613;
+            if (result < 0)
+            {
+                result = result * -1;
+            }
+            int divisor = 59233;
+            result = result / divisor;
+            result = result % bucketCount;
+            return result;
+        }
+
+        public int GetHashCode(string obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -6,14 +6,14 @@ namespace DataStructures.myHashTable
 {
     public class MyHashTable<T>
     {
-        //public MyEqualityComparer myEqualityComparer;
+        public MyEqualityComparer myEqualityComparer;
 
         public Node[] buckets { get; set; }
         public int bucketCount { get; set; }
 
         public MyHashTable(int bucketCount)
         {
-            //myEqualityComparer = MyEqualityComparer;
+            myEqualityComparer = new MyEqualityComparer();
             this.bucketCount = bucketCount;
             this.buckets = new Node[bucketCount];
         }
@@ -34,7 +34,7 @@ namespace DataStructures.myHashTable
             }
         }
 
-        public  int GetHashCode(string key)
+       /* public  int GetHashCode(string key, int bucketCount)
         {
             int keyLength = key.Length;
 
@@ -54,11 +54,11 @@ namespace DataStructures.myHashTable
             result = result / divisor;
             result = result % bucketCount;
             return result;
-        }
+        }*/
 
         public void Add(string key, T value)
         {
-            int hashIndex = GetHashCode(key);
+            int hashIndex = myEqualityComparer.GetHashCode(key, bucketCount);
 
             if (buckets[hashIndex] == null)
             {
@@ -73,7 +73,7 @@ namespace DataStructures.myHashTable
 
         public T Get(string key)
         {
-            int index = GetHashCode(key);
+            int index = myEqualityComparer.GetHashCode(key, bucketCount);
             Node bucket = buckets[index];
             if (bucket == null)
             {
@@ -97,7 +97,7 @@ namespace DataStructures.myHashTable
 
         public bool Contains(string key)
         {
-            int index = GetHashCode(key);
+            int index = myEqualityComparer.GetHashCode(key, bucketCount);
             Node bucket = buckets[index];
             if (bucket == null)
             {
