@@ -105,14 +105,14 @@ namespace DataStructures.myHashTable
             var words = input.Split(' ');
             foreach (var word in words)
             {
-                bool toggle = wordSearch.Contains(word);
+                bool toggle = wordSearch.Contains(word.ToLower());
                 if (toggle)
                 {
                     return word;
                 }
                 else
                 {
-                    wordSearch.Add(word, word);
+                    wordSearch.Add(word.ToLower(), word);
                 }
             }
             return null;

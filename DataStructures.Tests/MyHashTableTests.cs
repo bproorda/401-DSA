@@ -135,6 +135,9 @@ namespace DataStructures.Tests
 
         [Theory]
         [InlineData("One Two One", "One")]
+        [InlineData("Fear is the mindkiller, Fear is the little death that brings total obliteration", "Fear")]
+        [InlineData("To be or not to be, that is the Question", "to")]
+
         public void Find_Repeated_Word_Test(string input, string expected)
         {
             //act
