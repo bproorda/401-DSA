@@ -38,7 +38,7 @@ namespace DataStructures.myHashTable
 
         public void Add(string key, T value)
         {
-            int hashIndex = myEqualityComparer.GetHashCode(key, bucketCount);
+            int hashIndex = myEqualityComparer.GetHashCode(key) % bucketCount;
 
             if (buckets[hashIndex] == null)
             {
@@ -53,7 +53,7 @@ namespace DataStructures.myHashTable
 
         public T Get(string key)
         {
-            int index = myEqualityComparer.GetHashCode(key, bucketCount);
+            int index = myEqualityComparer.GetHashCode(key) % bucketCount;
             Node bucket = buckets[index];
             if (bucket == null)
             {
@@ -77,7 +77,7 @@ namespace DataStructures.myHashTable
 
         public bool Contains(string key)
         {
-            int index = myEqualityComparer.GetHashCode(key, bucketCount);
+            int index = myEqualityComparer.GetHashCode(key) % bucketCount;
             Node bucket = buckets[index];
             if (bucket == null)
             {
@@ -97,6 +97,16 @@ namespace DataStructures.myHashTable
                 }
             }
             return false;
+        }
+
+        public string FindRepeatedWord(string input)
+        {
+            var words = input.Split(' ');
+            foreach (var word in words)
+            {
+               
+            }
+            return default;
         }
     }
 }

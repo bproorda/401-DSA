@@ -11,7 +11,7 @@ namespace DataStructures.myHashTable
             throw new NotImplementedException();
         }
 
-        public int GetHashCode(string key, int bucketCount)
+        public int GetHashCode(string key)
         {
             int keyLength = key.Length;
 
@@ -29,13 +29,9 @@ namespace DataStructures.myHashTable
             }
             int divisor = 59233;
             result = result / divisor;
-            result = result % bucketCount;
+           
             return result;
         }
 
-        public int GetHashCode(string obj)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
