@@ -143,5 +143,15 @@ namespace DataStructures.Tests
             //Assert
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void No_Repeated_Word_Returns_Null()
+        {
+            //act
+            var actual = MyHashTable<string>.FindRepeatedWord("One Two Three");
+
+            //Assert
+            Assert.Null(actual);
+        }
     }
 }
