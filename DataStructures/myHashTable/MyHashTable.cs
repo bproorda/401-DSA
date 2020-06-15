@@ -99,7 +99,7 @@ namespace DataStructures.myHashTable
             return false;
         }
 
-        public string FindRepeatedWord(string input)
+        public static string FindRepeatedWord(string input)
         {
             MyHashTable<string> wordSearch = new MyHashTable<string>(1024);
             var words = input.Split(' ');

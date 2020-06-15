@@ -131,5 +131,17 @@ namespace DataStructures.Tests
                 int actual = testHT.Get("Skip");
             });
         }
+
+
+        [Theory]
+        [InlineData("One Two One", "One")]
+        public void Find_Repeated_Word_Test(string input, string expected)
+        {
+            //act
+            var actual = MyHashTable<string>.FindRepeatedWord(input);
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }
