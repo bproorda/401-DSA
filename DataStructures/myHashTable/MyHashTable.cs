@@ -101,12 +101,21 @@ namespace DataStructures.myHashTable
 
         public string FindRepeatedWord(string input)
         {
+            MyHashTable<string> wordSearch = new MyHashTable<string>(1024);
             var words = input.Split(' ');
             foreach (var word in words)
             {
-               
+                bool toggle = wordSearch.Contains(word);
+                if (toggle)
+                {
+                    return word;
+                }
+                else
+                {
+                    wordSearch.Add(word, word);
+                }
             }
-            return default;
+            return null;
         }
     }
 }
