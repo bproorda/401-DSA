@@ -36,9 +36,9 @@ namespace DataStructures.myHashTable
 
 
 
-        public void Add(string key, T value)
+        public virtual int Add(string key, T value)
         {
-            int hashIndex = myEqualityComparer.GetHashCode(key, bucketCount);
+            int hashIndex = myEqualityComparer.GetHashCode(key) % bucketCount;
 
             if (buckets[hashIndex] == null)
             {
@@ -49,11 +49,12 @@ namespace DataStructures.myHashTable
                 Node newNode = new Node(key, value);
                 buckets[hashIndex].Next = newNode;
             }
+            return 0;
         }
 
         public T Get(string key)
         {
-            int index = myEqualityComparer.GetHashCode(key, bucketCount);
+            int index = myEqualityComparer.GetHashCode(key) % bucketCount;
             Node bucket = buckets[index];
             if (bucket == null)
             {
@@ -77,7 +78,7 @@ namespace DataStructures.myHashTable
 
         public bool Contains(string key)
         {
-            int index = myEqualityComparer.GetHashCode(key, bucketCount);
+            int index = myEqualityComparer.GetHashCode(key) % bucketCount;
             Node bucket = buckets[index];
             if (bucket == null)
             {
@@ -98,5 +99,22 @@ namespace DataStructures.myHashTable
             }
             return false;
         }
+        public override string ToString()
+        {
+            string result = "";
+            for (int i = 0; i < bucketCount; i++)
+            {
+                while(buckets[i] != null)
+                {
+                    result = result + $"{buckets[i].Key} : {buckets[i].Value},";
+                    buckets[i] = buckets[i].Next;
+
+                }
+            }
+
+            return result;
+        }
+
+
     }
 }

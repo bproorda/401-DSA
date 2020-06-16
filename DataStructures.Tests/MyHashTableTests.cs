@@ -25,10 +25,10 @@ namespace DataStructures.Tests
             //arrange
             MyHashTable<int> testHT = new MyHashTable<int>(1024);
             //act
-            int testHash = testHT.myEqualityComparer.GetHashCode("Brennan", testHT.bucketCount);
+            int testHash = testHT.myEqualityComparer.GetHashCode("Brennan");
 
             //assert
-            Assert.Equal(992, testHash);
+            Assert.Equal(33760, testHash);
         }
 
         [Fact]
@@ -38,8 +38,8 @@ namespace DataStructures.Tests
             MyHashTable<int> testHT = new MyHashTable<int>(1024);
 
             //act
-            int A = testHT.myEqualityComparer.GetHashCode("Brennan", testHT.bucketCount);
-            int B = testHT.myEqualityComparer.GetHashCode("Brennan", testHT.bucketCount);
+            int A = testHT.myEqualityComparer.GetHashCode("Brennan");
+            int B = testHT.myEqualityComparer.GetHashCode("Brennan");
 
             //assert
             Assert.Equal(A, B);
@@ -51,7 +51,7 @@ namespace DataStructures.Tests
         {
             //arrange
             MyHashTable<int> testHT = new MyHashTable<int>(1024);
-            int thisIndex = testHT.myEqualityComparer.GetHashCode("Diana", testHT.bucketCount);
+            int thisIndex = testHT.myEqualityComparer.GetHashCode("Diana") % testHT.bucketCount;
 
             //act
             testHT.Add("Diana", 678);
@@ -65,7 +65,7 @@ namespace DataStructures.Tests
         {
             //arrange
             MyHashTable<int> testHT = new MyHashTable<int>(1024);
-            int thisIndex = testHT.myEqualityComparer.GetHashCode("Diana", testHT.bucketCount);
+            int thisIndex = testHT.myEqualityComparer.GetHashCode("Diana") % testHT.bucketCount;
 
             //act
             testHT.Add("Diana", 678);
@@ -131,5 +131,38 @@ namespace DataStructures.Tests
                 int actual = testHT.Get("Skip");
             });
         }
+
+        [Fact]
+        public void Counting_Repeats_Test()
+        {
+            //arrange
+            MyCountingHashTable testHt = new MyCountingHashTable(1024);
+            testHt.Add("Diana", 1);
+            testHt.Add("Diana", 1);
+            testHt.Add("Diana", 1);
+
+            //act
+            int actual = testHt.Get("Diana");
+
+            //assert
+            Assert.Equal(3, actual);
+        }
+        [Fact]
+        public void To_String_Test()
+        {
+            //arrange
+            MyCountingHashTable testHt = new MyCountingHashTable(1024);
+            testHt.Add("Diana", 1);
+            testHt.Add("Diana", 1);
+            testHt.Add("Jazz", 1);
+
+            //act
+            string actual = testHt.ToString();
+
+            //assert
+            Assert.Equal("Jazz : 1,Diana : 2,", actual);
+        }
+
+
     }
 }

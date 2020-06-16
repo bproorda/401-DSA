@@ -20,3 +20,5 @@ the small this will be.
 if no such key exists.
 - GetHashCode(string key, int bucketCount): Determines the index of pair based off of the key and the number of buckets 
 in the table.
+- FindRepeatedWord(string input): Takes in a string up and returns the first word that is repeated. If no word is repeated, 
+it will return null; 
