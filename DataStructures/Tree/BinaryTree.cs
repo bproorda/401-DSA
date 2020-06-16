@@ -1,4 +1,5 @@
 ﻿using DataStructures;
+using DataStructures.myHashTable;
 using DataStructures.StackAndQueue;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,34 @@ namespace DataStructures
             public Node Left { get; set; }
             public Node Right { get; set; }
 
+        }
+
+        public HashSet<int> HTTraversal()
+        {
+            if (Root == null)
+            {
+                throw new TreeEmptyException();
+            }
+            
+            HashSet<int> output = new HashSet<int>();
+            Node current = Root;
+            PreOrderHT(output, current);
+
+            return output;
+        }
+
+        private void PreOrderHT(HashSet<int> output, Node current)
+        {
+            output.Add(current.Value);
+
+            if (current.Left != null)
+            {
+                PreOrderHT(output, current.Left);
+            }
+            if (current.Right != null)
+            {
+                PreOrderHT(output, current.Right);
+            }
         }
 
         public int[] DepthHandler(string choice)
