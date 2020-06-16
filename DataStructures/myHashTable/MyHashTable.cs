@@ -36,7 +36,7 @@ namespace DataStructures.myHashTable
 
 
 
-        public void Add(string key, T value)
+        public virtual int Add(string key, T value)
         {
             int hashIndex = myEqualityComparer.GetHashCode(key) % bucketCount;
 
@@ -49,6 +49,7 @@ namespace DataStructures.myHashTable
                 Node newNode = new Node(key, value);
                 buckets[hashIndex].Next = newNode;
             }
+            return 0;
         }
 
         public T Get(string key)

@@ -132,6 +132,21 @@ namespace DataStructures.Tests
             });
         }
 
+        [Fact]
+        public void Counting_Repeats_Test()
+        {
+            //arrange
+            MyCountingHashTable testHt = new MyCountingHashTable(1024);
+            testHt.Add("Diana", 1);
+            testHt.Add("Diana", 1);
+            testHt.Add("Diana", 1);
+
+            //act
+            int actual = testHt.Get("Diana");
+
+            //assert
+            Assert.Equal(3, actual);
+        }
 
        
     }
