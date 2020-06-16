@@ -12,11 +12,13 @@
         public override int Add(string key, int value)
         {
             int hashIndex = myEqualityComparer.GetHashCode(key) % bucketCount;
+         
 
             if (buckets[hashIndex] == null)
             {
                 Node newNode = new Node(key, value);
                 buckets[hashIndex] = newNode;
+              
             }
             else
             {
@@ -34,7 +36,7 @@
                   
                 }
                 Node newNode = new Node(key, value);
-                buckets[hashIndex].Next = newNode;
+                buckets[hashIndex] = newNode;
             }
             
             return 0;

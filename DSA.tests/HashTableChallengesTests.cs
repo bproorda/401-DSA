@@ -31,5 +31,19 @@ namespace DSA.tests
             //Assert
             Assert.Null(actual);
         }
+
+        [Fact]
+        public void Counts_Of_Each_Word_Test()
+        {
+            //arrange 
+            string input = "Penultimate is the penultimate word in this penultimate sentence. See?";
+            string[] expected = new string[] { "in : 1", "this : 1", "the : 1", "penultimate : 3", "word : 1", "see? : 1", "sentence. : 1", "" };
+
+            //act
+            string[] actual = HashTableChallenges.CountsOfEachWord(input);
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }

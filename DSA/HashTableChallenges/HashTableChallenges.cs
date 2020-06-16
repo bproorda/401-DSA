@@ -34,8 +34,10 @@ namespace DSA
             {
               wordCounts.Add(word.ToLower(), 1);
             }
+            string wordCountsString = wordCounts.ToString();
+            string[] result = wordCountsString.Split(",");
 
-            return default;
+            return result;
         }  
     }
 }
