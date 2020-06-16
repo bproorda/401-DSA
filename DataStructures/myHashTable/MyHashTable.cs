@@ -99,6 +99,21 @@ namespace DataStructures.myHashTable
             }
             return false;
         }
+        public override string ToString()
+        {
+            string result = "";
+            for (int i = 0; i < bucketCount; i++)
+            {
+                while(buckets[i] != null)
+                {
+                    result = result + $"{buckets[i].Key} : {buckets[i].Value},";
+                    buckets[i] = buckets[i].Next;
+
+                }
+            }
+
+            return result;
+        }
 
 
     }

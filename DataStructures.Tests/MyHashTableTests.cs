@@ -147,7 +147,22 @@ namespace DataStructures.Tests
             //assert
             Assert.Equal(3, actual);
         }
+        [Fact]
+        public void To_String_Test()
+        {
+            //arrange
+            MyCountingHashTable testHt = new MyCountingHashTable(1024);
+            testHt.Add("Diana", 1);
+            testHt.Add("Diana", 1);
+            testHt.Add("Jazz", 1);
 
-       
+            //act
+            string actual = testHt.ToString();
+
+            //assert
+            Assert.Equal("Jazz : 1,Diana : 2,", actual);
+        }
+
+
     }
 }

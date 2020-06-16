@@ -25,5 +25,17 @@ namespace DSA
             }
             return null;
         }
+
+        public static string[] CountsOfEachWord(string input)
+        {
+            MyCountingHashTable wordCounts = new MyCountingHashTable(1024);
+            var words = input.Split(' ');
+            foreach (var word in words)
+            {
+              wordCounts.Add(word.ToLower(), 1);
+            }
+
+            return default;
+        }  
     }
 }
