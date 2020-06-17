@@ -58,8 +58,8 @@ namespace DSA.tests
             rightHT.Add("Icy", "warm");
 
             //act
-            HashSet<string> actual = HashTableChallenges.LeftJoin(leftHT, rightHT);
-            HashSet<string> expected = new HashSet<string>();
+            HashSet<string[]> actual = HashTableChallenges.LeftJoin(leftHT, rightHT);
+            HashSet<string[]> expected = new HashSet<string[]>();
 
             //assert
             Assert.Equal(expected, actual);

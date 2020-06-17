@@ -40,12 +40,12 @@ namespace DSA
             return result;
         } 
         
-        public static HashSet<string> LeftJoin(MyHashTable<string> left, MyHashTable<string> right)
+        public static HashSet<string[]> LeftJoin(MyHashTable<string> left, MyHashTable<string> right)
         {
-            HashSet<string> leftHash = new HashSet<string>();
+            HashSet<string[]> leftHash = new HashSet<string[]>();
             foreach (var word in left)
             {
-                leftHash.Add(word);
+                leftHash.Add(word.Split(','));
             }
             return leftHash;
         }
