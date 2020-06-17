@@ -45,5 +45,24 @@ namespace DSA.tests
             //Assert
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Left_Join_Test()
+        {
+            //arrange
+            MyHashTable<string> leftHT = new MyHashTable<string>(1024);
+            leftHT.Add("Thunderous", "Loud");
+            leftHT.Add("Icy", "Cold");
+            MyHashTable<string> rightHT = new MyHashTable<string>(1024);
+            rightHT.Add("Thunderous", "quiet");
+            rightHT.Add("Icy", "warm");
+
+            //act
+            HashSet<string> actual = HashTableChallenges.LeftJoin(leftHT, rightHT);
+            HashSet<string> expected = new HashSet<string>();
+
+            //assert
+            Assert.Equal(expected, actual);
+        }
     }
 }

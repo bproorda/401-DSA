@@ -47,7 +47,7 @@ namespace DSA
             {
                 leftHash.Add(word);
             }
-            return leftHash
+            return leftHash;
         }
     }
 }
