@@ -49,18 +49,18 @@ namespace DataStructures
 
         private void PreOrderHT2(HashSet<int> output, HashSet<int> otherTree, Node current)
         {
-            if (otherTree.Contains(current.Value);
+            if (otherTree.Contains(current.Value))
             {
                 output.Add(current.Value); 
             }
 
             if (current.Left != null)
             {
-                PreOrderHT(output, current.Left);
+                PreOrderHT2(output, otherTree, current.Left);
             }
             if (current.Right != null)
             {
-                PreOrderHT(output, current.Right);
+                PreOrderHT2(output, otherTree, current.Right);
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using DataStructures.myHashTable;
+﻿using DataStructures;
+using DataStructures.myHashTable;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -44,6 +45,35 @@ namespace DSA.tests
 
             //Assert
             Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Tree_Comparer_Test()
+        {
+            //arrange
+            BinaryTree mytreeA = new BinaryTree();
+            BinaryTree mytreeB = new BinaryTree();
+            BinaryTree.Node firstANode = new BinaryTree.Node();
+            BinaryTree.Node firstBNode = new BinaryTree.Node();
+            BinaryTree.Node secondBNode = new BinaryTree.Node();
+            firstANode.Value = 13;
+            firstBNode.Value = 13;
+            secondBNode.Value = 11;
+
+            mytreeA.Root = firstANode;
+            mytreeB.Root = firstBNode;
+            mytreeB.Root.Left = secondBNode;
+
+            //act
+            var actual = MyHashTable<int>.TreeComparer(mytreeA, mytreeB);
+
+            HashSet<int> expected = new HashSet<int>();
+            expected.Add(13);
+
+            //assert
+            Assert.Equal(expected, actual);
+
+
         }
     }
 }

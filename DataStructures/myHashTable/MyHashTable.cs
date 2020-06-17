@@ -100,7 +100,7 @@ namespace DataStructures.myHashTable
             return false;
         }
 
-        public HashSet<int> TreeComparer(BinaryTree treeA, BinaryTree treeB)
+        public static HashSet<int> TreeComparer(BinaryTree treeA, BinaryTree treeB)
         {
             HashSet<int> treeAHash = treeA.HTTraversal();
 
