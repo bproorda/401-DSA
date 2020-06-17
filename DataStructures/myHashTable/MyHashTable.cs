@@ -5,11 +5,10 @@ using System.Text;
 
 namespace DataStructures.myHashTable
 {
-    public class MyHashTable<T> : IEnumerable<HTObj<T>>
+    public class MyHashTable<T> : IEnumerable<string>
     {
         public MyEqualityComparer myEqualityComparer;
-        private string key;
-        private T value;
+
 
         public Node[] buckets { get; set; }
         public int bucketCount { get; set; }
@@ -118,14 +117,14 @@ namespace DataStructures.myHashTable
             return result;
         }
 
-        public IEnumerator<HTObj<T>> GetEnumerator()
+        public IEnumerator<string> GetEnumerator()
         {
             foreach (var b in buckets)
             {
                 Node temp = b;
                 while(temp != null)
                 {
-                    HTObj<T> result = new HTObj<T>(temp.Key, temp.Value);
+                    string result = $"{temp.Key }, {temp.Value}";
                     temp = temp.Next;
                     yield return result;
                     
@@ -136,20 +135,9 @@ namespace DataStructures.myHashTable
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return this.GetEnumerator();
+            return GetEnumerator();
         }
     }
 
-    public class HTObj<T>
-    {
-        public HTObj(string key, T value)
-        {
-            this.key = key;
-            this.value = value;
-        }
 
-        public string key { get; private set; }
-
-        private T value;
-    }
 }

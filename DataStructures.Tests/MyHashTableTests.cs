@@ -167,14 +167,15 @@ namespace DataStructures.Tests
         public void IEnumerator_Test()
         {
             //arrange
-            MyHashTable<int> testHT = new MyHashTable<int>(1024);
-            testHT.Add("Diana", 678);
-            testHT.Add("Jazz", 977);
+            MyHashTable<string> testHT = new MyHashTable<string>(1024);
+            testHT.Add("Diana", "Woof");
+            testHT.Add("Jazz", "boof");
+            string[] exepected = new string[] { "Jazz", "Diana" };
+         
 
-            //act
-            var actual = testHT.GetEnumerator();
-
-            Assert.NotNull(actual);
+            //Assert
+            //Assert.NotNull(actual);
+            Assert.Equal(exepected, testHT);
         }
     }
 }
