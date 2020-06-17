@@ -53,6 +53,7 @@ namespace DSA.tests
             MyHashTable<string> leftHT = new MyHashTable<string>(1024);
             leftHT.Add("Thunderous", "Loud");
             leftHT.Add("Icy", "Cold");
+            leftHT.Add("Quick", "Fast");
             MyHashTable<string> rightHT = new MyHashTable<string>(1024);
             rightHT.Add("Thunderous", "quiet");
             rightHT.Add("Icy", "warm");
@@ -60,9 +61,12 @@ namespace DSA.tests
             //act
             HashSet<string[]> actual = HashTableChallenges.LeftJoin(leftHT, rightHT);
             HashSet<string[]> expected = new HashSet<string[]>();
+            expected.Add(new string[] {"Icy", "Cold", "warm"});
+            expected.Add(new string[] {"Quick", "Fast", "NULL"});
+            expected.Add(new string[] {"Thunderous", "Loud", "quiet"});
 
             //assert
-            Assert.Equal(expected, actual);
+            Assert.Equal(expected.ToString(), actual.ToString());
         }
     }
 }
