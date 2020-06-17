@@ -124,7 +124,7 @@ namespace DataStructures.myHashTable
                 Node temp = b;
                 while(temp != null)
                 {
-                    string result = $"{temp.Key }, {temp.Value}";
+                    string result = $"{temp.Key },{temp.Value}";
                     temp = temp.Next;
                     yield return result;
                     

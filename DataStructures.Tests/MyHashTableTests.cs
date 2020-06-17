@@ -170,7 +170,7 @@ namespace DataStructures.Tests
             MyHashTable<string> testHT = new MyHashTable<string>(1024);
             testHT.Add("Diana", "Woof");
             testHT.Add("Jazz", "boof");
-            string[] exepected = new string[] { "Jazz", "Diana" };
+            string[] exepected = new string[] { "Jazz,boof", "Diana,Woof" };
          
 
             //Assert
