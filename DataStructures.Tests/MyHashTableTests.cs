@@ -163,6 +163,18 @@ namespace DataStructures.Tests
             Assert.Equal("Jazz : 1,Diana : 2,", actual);
         }
 
+        [Fact]
+        public void IEnumerator_Test()
+        {
+            //arrange
+            MyHashTable<int> testHT = new MyHashTable<int>(1024);
+            testHT.Add("Diana", 678);
+            testHT.Add("Jazz", 977);
 
+            //act
+            var actual = testHT.GetEnumerator();
+
+            Assert.NotNull(actual);
+        }
     }
 }
