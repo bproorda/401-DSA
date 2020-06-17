@@ -99,6 +99,15 @@ namespace DataStructures.myHashTable
             }
             return false;
         }
+
+        public static HashSet<int> TreeComparer(BinaryTree treeA, BinaryTree treeB)
+        {
+            HashSet<int> treeAHash = treeA.HTTraversal();
+
+            HashSet<int> TreeBHash = treeB.HTTraversal2(treeAHash);
+            return TreeBHash;
+        }
+
         public override string ToString()
         {
             string result = "";

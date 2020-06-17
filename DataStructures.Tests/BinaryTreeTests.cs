@@ -17,7 +17,21 @@ namespace DataStructures.Tests
             //assert
             Assert.NotNull(myTree);
         }
+        [Fact]
+        public void HT_Travesal_Test()
+        {
+            //arrange
+            BinaryTree mytree = new BinaryTree();
+            BinaryTree.Node firstNode = new BinaryTree.Node();
+            firstNode.Value = 13;
+            mytree.Root = firstNode;
 
+            //act
+            bool actual = mytree.HTTraversal().Contains(13);
+
+            //assert
+            Assert.True(actual);
+        }
 
         [Fact]
 
