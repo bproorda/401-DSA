@@ -38,6 +38,16 @@ namespace DSA
             string[] result = wordCountsString.Split(",");
 
             return result;
-        }  
+        } 
+        
+        public static HashSet<string> LeftJoin(MyHashTable<string> left, MyHashTable<string> right)
+        {
+            HashSet<string> leftHash = new HashSet<string>();
+            foreach (var word in left)
+            {
+                leftHash.Add(word);
+            }
+            return leftHash
+        }
     }
 }
