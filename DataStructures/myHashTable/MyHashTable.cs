@@ -102,10 +102,10 @@ namespace DataStructures.myHashTable
 
         public HashSet<int> TreeComparer(BinaryTree treeA, BinaryTree treeB)
         {
-            HashSet<int> TreeAHash = treeA.HTTraversal();
+            HashSet<int> treeAHash = treeA.HTTraversal();
 
-
-            return default;
+            HashSet<int> TreeBHash = treeB.HTTraversal2(treeAHash);
+            return TreeBHash;
         }
 
         public override string ToString()

@@ -33,6 +33,36 @@ namespace DataStructures
 
             return output;
         }
+        public HashSet<int> HTTraversal2(HashSet<int> otherTree)
+        {
+            if (Root == null)
+            {
+                throw new TreeEmptyException();
+            }
+
+            HashSet<int> output = new HashSet<int>();
+            Node current = Root;
+            PreOrderHT2(output, otherTree, current);
+
+            return output;
+        }
+
+        private void PreOrderHT2(HashSet<int> output, HashSet<int> otherTree, Node current)
+        {
+            if (otherTree.Contains(current.Value);
+            {
+                output.Add(current.Value); 
+            }
+
+            if (current.Left != null)
+            {
+                PreOrderHT(output, current.Left);
+            }
+            if (current.Right != null)
+            {
+                PreOrderHT(output, current.Right);
+            }
+        }
 
         private void PreOrderHT(HashSet<int> output, Node current)
         {
