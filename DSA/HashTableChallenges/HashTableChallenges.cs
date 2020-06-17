@@ -43,11 +43,23 @@ namespace DSA
         public static HashSet<string[]> LeftJoin(MyHashTable<string> left, MyHashTable<string> right)
         {
             HashSet<string[]> leftHash = new HashSet<string[]>();
+            HashSet<string[]> result = new HashSet<string[]>();
             foreach (var word in left)
             {
                 leftHash.Add(word.Split(','));
             }
-            return leftHash;
+            foreach (var entry in leftHash)
+            {
+                if (right.Contains(entry[0]))
+                {
+                    result.Add(new string[] { entry[0], entry[1], right.Get(entry[0]) });
+                }
+                else
+                {
+                    result.Add(new string[] { entry[0], entry[1], "NULL" });
+                }
+            }
+            return result;
         }
     }
 }
