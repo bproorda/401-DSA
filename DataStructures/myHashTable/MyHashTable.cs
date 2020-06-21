@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DataStructures.myHashTable
 {
-    public class MyHashTable<T>
+    public class MyHashTable<T> : IEnumerable<string>
     {
         public MyEqualityComparer myEqualityComparer;
+
 
         public Node[] buckets { get; set; }
         public int bucketCount { get; set; }
@@ -115,6 +117,27 @@ namespace DataStructures.myHashTable
             return result;
         }
 
+        public IEnumerator<string> GetEnumerator()
+        {
+            foreach (var b in buckets)
+            {
+                Node temp = b;
+                while(temp != null)
+                {
+                    string result = $"{temp.Key },{temp.Value}";
+                    temp = temp.Next;
+                    yield return result;
+                    
+                }
 
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
+
+
 }
