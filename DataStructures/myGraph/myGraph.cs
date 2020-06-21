@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataStructures.myGraph
 {
-    class myGraph
+   public class myGraph
     {
     }
 }
