@@ -6,7 +6,10 @@ namespace DataStructures.myGraph
 {
    public class myGraph<T>
     {
-
+        public myGraph()
+        {
+            this.Vertices = new List<Vertex<T>>();
+        }
         public List<Vertex<T>> Vertices { get; set; }
 
         public int CountV { get; set; }
@@ -15,7 +18,10 @@ namespace DataStructures.myGraph
 
         public Vertex<T> AddVertex(T Value)
         {
-            return default;
+            Vertex<T> newVertex = new Vertex<T>(Value);
+            Vertices.Add(newVertex);
+
+            return newVertex;
         }
 
     }

@@ -12,15 +12,15 @@ namespace DataStructures.Tests
         {
             //arrange
             myGraph<string> testGraph = new myGraph<string>();
-            var inital = testGraph.Vertices;
+            
 
             //act
             var actual = testGraph.AddVertex("Bob");
-            var final = testGraph.Vertices;
+            var expected = testGraph.Vertices[0];
 
 
             //Assert
-            Assert.NotEqual(final, inital);
+            Assert.Equal(expected, actual);
         }
 
     }
