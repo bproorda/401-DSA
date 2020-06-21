@@ -13,6 +13,10 @@ namespace DataStructures.myGraph
 
         public int CountE { get; set; }
 
+        public Vertex<T> AddVertex(T Value)
+        {
+            return default;
+        }
 
     }
     public class Vertex<T>
