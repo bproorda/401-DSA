@@ -17,10 +17,26 @@ namespace DataStructures.Tests
             //act
             var actual = testGraph.AddVertex("Bob");
             var expected = testGraph.Vertices[0];
+           
 
 
             //Assert
             Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Size_Method_Works()
+        {
+            //arrange
+            myGraph<string> testGraph = new myGraph<string>();
+            testGraph.AddVertex("Bob");
+
+            //act
+            var actual = testGraph.Size();
+
+            //Assert
+            Assert.Equal(1, actual);
+
         }
 
     }

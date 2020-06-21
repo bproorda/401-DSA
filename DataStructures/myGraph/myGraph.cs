@@ -12,16 +12,21 @@ namespace DataStructures.myGraph
         }
         public List<Vertex<T>> Vertices { get; set; }
 
-        public int CountV { get; set; }
+        private int CountV { get; set; }
 
-        public int CountE { get; set; }
+        private int CountE { get; set; }
 
         public Vertex<T> AddVertex(T Value)
         {
             Vertex<T> newVertex = new Vertex<T>(Value);
             Vertices.Add(newVertex);
-
+            CountV++;
             return newVertex;
+        }
+
+        public int Size()
+        {
+            return CountV;
         }
 
     }
