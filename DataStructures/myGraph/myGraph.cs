@@ -7,8 +7,13 @@ namespace DataStructures.myGraph
    public class myGraph<T>
     {
 
-
         public List<Vertex<T>> Vertices { get; set; }
+
+        public int CountV { get; set; }
+
+        public int CountE { get; set; }
+
+
     }
     public class Vertex<T>
     {
