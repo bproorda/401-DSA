@@ -46,6 +46,17 @@ namespace DataStructures.myGraph
 
         }
 
+        public List<Vertex<T>> GetVertices()
+        {
+            return Vertices;
+        }
+
+        public List<Edge<T>> GetNeighbors(Vertex<T> vertex)
+        {
+            return vertex.Neighbors;
+        }
+
+
         public int Size()
         {
             return CountV;
