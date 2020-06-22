@@ -51,9 +51,17 @@ namespace DataStructures.myGraph
             return Vertices;
         }
 
-        public List<Edge<T>> GetNeighbors(Vertex<T> vertex)
+        public List<Vertex<T>> GetNeighbors(Vertex<T> vertex)
         {
-            return vertex.Neighbors;
+            var result = new List<Vertex<T>>();
+            var neighborEdges = vertex.Neighbors;
+
+            foreach (var neighbor in neighborEdges)
+            {
+                result.Add(neighbor.Neighbor);
+            }
+
+            return result;
         }
 
 
