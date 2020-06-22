@@ -39,5 +39,22 @@ namespace DataStructures.Tests
 
         }
 
+        //Test both adding edge and added weighted edges
+        [Fact]
+        public void Add_Edge_Works()
+        {
+            //arrange
+            myGraph<string> testGraph = new myGraph<string>();
+            var bob = testGraph.AddVertex("Bob");
+            var carol = testGraph.AddVertex("Carol");
+
+            //Arrange
+            testGraph.AddEdge(bob, carol, 13);
+            var actual = bob.Neighbors[0].Weight;
+
+            //Assert
+            Assert.Equal(13, actual);
+        }
+
     }
 }

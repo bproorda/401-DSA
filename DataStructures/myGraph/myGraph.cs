@@ -70,7 +70,7 @@ namespace DataStructures.myGraph
     {
         public Vertex<T> Neighbor { get; set; }
 
-        public int Weight { get; set; }
+        public int? Weight { get; set; }
 
         public Edge(Vertex<T> neighbor)
         {
