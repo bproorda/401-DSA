@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace DataStructures.myGraph
@@ -22,6 +23,27 @@ namespace DataStructures.myGraph
             Vertices.Add(newVertex);
             CountV++;
             return newVertex;
+        }
+
+        public void AddEdge(Vertex<T> v1, Vertex<T> v2, int? weight= null)
+        {
+
+            if (weight == null)
+            {
+                var edge2 = new Edge<T>(v1);
+                var edge1 = new Edge<T>(v2);
+                v1.Neighbors.Add(edge1);
+                v2.Neighbors.Add(edge2);
+            } else
+            {
+                var edge2 = new Edge<T>(v1, weight);
+                var edge1 = new Edge<T>(v2, weight);
+                v1.Neighbors.Add(edge1);
+                v2.Neighbors.Add(edge2);
+            }
+
+            
+
         }
 
         public int Size()
@@ -56,7 +78,7 @@ namespace DataStructures.myGraph
             this.Weight = 0;
         }
 
-        public Edge(Vertex<T> neighbor,int weight)
+        public Edge(Vertex<T> neighbor,int? weight)
         {
             this.Neighbor = neighbor;
             this.Weight = weight;
