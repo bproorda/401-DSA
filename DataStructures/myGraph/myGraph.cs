@@ -34,13 +34,32 @@ namespace DataStructures.myGraph
     {
         public T Value { get; set; }
 
-        public List<Vertex<T>> Neighbors { get; set; }
+        public List<Edge<T>> Neighbors { get; set; }
 
         public Vertex(T value)
         {
             this.Value = value;
-            this.Neighbors = new List<Vertex<T>>();
+            this.Neighbors = new List<Edge<T>>();
         }
 
+    }
+
+    public class Edge<T>
+    {
+        public Vertex<T> Neighbor { get; set; }
+
+        public int Weight { get; set; }
+
+        public Edge(Vertex<T> neighbor)
+        {
+            this.Neighbor = neighbor;
+            this.Weight = 0;
+        }
+
+        public Edge(Vertex<T> neighbor,int weight)
+        {
+            this.Neighbor = neighbor;
+            this.Weight = weight;
+        }
     }
 }
