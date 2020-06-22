@@ -71,5 +71,23 @@ namespace DataStructures.Tests
             Assert.Equal(bob, actual[0]);
         }
 
+        [Fact]
+        public void Get_Neighbors_Test()
+        {
+            //arrange
+            myGraph<string> testGraph = new myGraph<string>();
+            var bob = testGraph.AddVertex("Bob");
+            var carol = testGraph.AddVertex("Carol");
+            var diana = testGraph.AddVertex("Diana");
+            testGraph.AddEdge(bob, carol, 13);
+            testGraph.AddEdge(bob, diana, 9);
+
+            //act
+            var actual = testGraph.GetNeighbors(bob);
+
+            //Assert
+            Assert.Equal(diana, actual[1].Neighbor);
+        }
+
     }
 }
