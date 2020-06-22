@@ -56,5 +56,20 @@ namespace DataStructures.Tests
             Assert.Equal(13, actual);
         }
 
+        [Fact]
+        public void Get_Vertices_Test()
+        {
+            //arrange
+            myGraph<string> testGraph = new myGraph<string>();
+            var bob = testGraph.AddVertex("Bob");
+            var carol = testGraph.AddVertex("Carol");
+
+            //Arrange
+            var actual = testGraph.GetVertices();
+
+            //Assert
+            Assert.Equal(bob, actual[0]);
+        }
+
     }
 }

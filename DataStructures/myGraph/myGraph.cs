@@ -11,7 +11,7 @@ namespace DataStructures.myGraph
         {
             this.Vertices = new List<Vertex<T>>();
         }
-        public List<Vertex<T>> Vertices { get; set; }
+        private List<Vertex<T>> Vertices { get; set; }
 
         private int CountV { get; set; }
 
@@ -67,7 +67,7 @@ namespace DataStructures.myGraph
     {
         public T Value { get; set; }
 
-        public List<Edge<T>> Neighbors { get; set; }
+        private List<Edge<T>> Neighbors { get; set; }
 
         public Vertex(T value)
         {
