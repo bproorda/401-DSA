@@ -108,5 +108,25 @@ namespace DataStructures.Tests
             Assert.Equal(testGraph.Size(), actual.Count());
         }
 
+        [Fact]
+        public void Breadth_First_Test_B()
+        {
+            //arrange
+            myGraph<string> testGraph = new myGraph<string>();
+            var bob = testGraph.AddVertex("Bob");
+            var carol = testGraph.AddVertex("Carol");
+            var diana = testGraph.AddVertex("Diana");
+            var bill = testGraph.AddVertex("Bill");
+            testGraph.AddEdge(bob, carol, 13);
+            testGraph.AddEdge(bob, diana, 9);
+            testGraph.AddEdge(diana, bill, 23);
+
+
+            //act
+            var actual = testGraph.BreadthFirst(bob);
+
+            //Assert
+            Assert.Equal(testGraph.Size(), actual.Count());
+        }
     }
 }

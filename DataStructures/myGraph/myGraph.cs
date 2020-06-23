@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace DataStructures.myGraph
 {
@@ -94,6 +95,17 @@ namespace DataStructures.myGraph
                 yield return current;
             }
             
+        }
+
+        public string IEtoString(IEnumerable<Vertex<T>> vertices)
+        {
+            string result = "";
+            foreach (var vertex in vertices)
+            {
+                result = result + $"{vertex.Value}, ";
+            }
+            Regex.Replace(result, @"/,\s$", "");
+            return result;
         }
 
     }
