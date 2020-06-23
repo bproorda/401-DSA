@@ -70,6 +70,23 @@ namespace DataStructures.myGraph
             return CountV;
         }
 
+        public IEnumerable<Vertex<T>> BreadthFirst(Vertex<T> start)
+        {
+            myQueue<Vertex<T>> graphQ = new myQueue<Vertex<T>>();
+            graphQ.enQueue(start);
+
+            while (graphQ != null)
+            {
+                var current = graphQ.deQueue();
+                foreach (var neighbor in current.Neighbors)
+                {
+                    graphQ.enQueue(neighbor.Neighbor);
+                }
+                yield return current;
+            }
+            
+        }
+
     }
     public class Vertex<T>
     {
