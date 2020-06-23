@@ -1,6 +1,7 @@
 ﻿using DataStructures.myGraph;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace DataStructures.Tests
@@ -87,6 +88,24 @@ namespace DataStructures.Tests
 
             //Assert
             Assert.Equal(diana, actual[1]);
+        }
+
+        [Fact]
+        public void Breadth_First_Test_A()
+        {
+            //arrange
+            myGraph<string> testGraph = new myGraph<string>();
+            var bob = testGraph.AddVertex("Bob");
+            var carol = testGraph.AddVertex("Carol");
+            var diana = testGraph.AddVertex("Diana");
+            testGraph.AddEdge(bob, carol, 13);
+            testGraph.AddEdge(bob, diana, 9);
+
+            //act
+            var actual = testGraph.BreadthFirst(bob);
+
+            //Assert
+            Assert.Equal(testGraph.Size(), actual.Count());
         }
 
     }

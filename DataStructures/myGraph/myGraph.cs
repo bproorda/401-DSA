@@ -72,15 +72,15 @@ namespace DataStructures.myGraph
 
         public IEnumerable<Vertex<T>> BreadthFirst(Vertex<T> start)
         {
-            myQueue<Vertex<T>> graphQ = new myQueue<Vertex<T>>();
-            graphQ.enQueue(start);
+           Queue<Vertex<T>> graphQ = new Queue<Vertex<T>>();
+            graphQ.Enqueue(start);
 
             while (graphQ != null)
             {
-                var current = graphQ.deQueue();
+                var current = graphQ.Dequeue();
                 foreach (var neighbor in current.Neighbors)
                 {
-                    graphQ.enQueue(neighbor.Neighbor);
+                    graphQ.Enqueue(neighbor.Neighbor);
                 }
                 yield return current;
             }
