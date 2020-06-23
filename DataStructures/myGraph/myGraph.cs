@@ -99,6 +99,14 @@ namespace DataStructures.myGraph
             
         }
 
+        public string BreadthFirstHandler(Vertex<T> start)
+        {
+            var collection = BreadthFirst(start);
+            string result = IEtoString(collection);
+
+            return result;
+        }
+
         public string IEtoString(IEnumerable<Vertex<T>> vertices)
         {
             string result = "";

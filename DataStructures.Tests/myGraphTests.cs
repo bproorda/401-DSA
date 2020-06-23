@@ -89,7 +89,7 @@ namespace DataStructures.Tests
             //Assert
             Assert.Equal(diana, actual[1]);
         }
-
+        //Wrote this before I made Handler Function, left it in to give it another way to test it
         [Fact]
         public void Breadth_First_Test_A()
         {
@@ -108,6 +108,7 @@ namespace DataStructures.Tests
             Assert.Equal(testGraph.Size(), actual.Count());
         }
 
+        //Wrote this before I made Handler Function, left it in to give it another way to test it
         [Fact]
         public void Breadth_First_Test_B()
         {
@@ -124,8 +125,8 @@ namespace DataStructures.Tests
 
 
             //act
-            var IE = testGraph.BreadthFirst(bob);
-            var actual = testGraph.IEtoString(IE);
+            var actual = testGraph.BreadthFirstHandler(bob);
+            
 
             //Assert
             Assert.Equal(expected, actual);
