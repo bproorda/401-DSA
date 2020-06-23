@@ -86,7 +86,7 @@ namespace DataStructures.Tests
             var actual = testGraph.GetNeighbors(bob);
 
             //Assert
-            Assert.Equal(diana, actual[1].Neighbor);
+            Assert.Equal(diana, actual[1]);
         }
 
     }
