@@ -72,15 +72,24 @@ namespace DataStructures.myGraph
 
         public IEnumerable<Vertex<T>> BreadthFirst(Vertex<T> start)
         {
-           Queue<Vertex<T>> graphQ = new Queue<Vertex<T>>();
-            graphQ.Enqueue(start);
-
-            while (graphQ != null)
+            foreach (var vertex in Vertices)
             {
-                var current = graphQ.Dequeue();
+                vertex.Visited = false;
+            }
+
+            myQueue<Vertex<T>> graphQ = new myQueue<Vertex<T>>();
+            graphQ.enQueue(start);
+
+            while (graphQ.Front != null)
+            {
+                var current = graphQ.deQueue();
+                current.Visited = true;
                 foreach (var neighbor in current.Neighbors)
                 {
-                    graphQ.Enqueue(neighbor.Neighbor);
+                    if (!neighbor.Neighbor.Visited)
+                    {
+                        graphQ.enQueue(neighbor.Neighbor); 
+                    }
                 }
                 yield return current;
             }
@@ -93,11 +102,13 @@ namespace DataStructures.myGraph
         public T Value { get; set; }
 
         public List<Edge<T>> Neighbors { get; set; }
+        public bool Visited { get; set; }
 
         public Vertex(T value)
         {
             this.Value = value;
             this.Neighbors = new List<Edge<T>>();
+            this.Visited = false;
         }
 
     }
