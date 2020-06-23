@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Google.Protobuf;
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
+
 
 namespace DataStructures.myGraph
 {
@@ -70,17 +73,66 @@ namespace DataStructures.myGraph
             return CountV;
         }
 
+        public IEnumerable<Vertex<T>> BreadthFirst(Vertex<T> start)
+        {
+            foreach (var vertex in Vertices)
+            {
+                vertex.Visited = false;
+            }
+
+            myQueue<Vertex<T>> graphQ = new myQueue<Vertex<T>>();
+            graphQ.enQueue(start);
+
+            while (graphQ.Front != null)
+            {
+                var current = graphQ.deQueue();
+                current.Visited = true;
+                foreach (var neighbor in current.Neighbors)
+                {
+                    if (!neighbor.Neighbor.Visited)
+                    {
+                        graphQ.enQueue(neighbor.Neighbor); 
+                    }
+                }
+                yield return current;
+            }
+            
+        }
+
+        public string BreadthFirstHandler(Vertex<T> start)
+        {
+            var collection = BreadthFirst(start);
+            string result = IEtoString(collection);
+
+            return result;
+        }
+
+        public string IEtoString(IEnumerable<Vertex<T>> vertices)
+        {
+            string result = "";
+            foreach (var vertex in vertices)
+            {
+                result = result + $"{vertex.Value}, ";
+            }
+            Regex rgx = new Regex(",\\s$");
+
+            result = rgx.Replace(result, "");
+            return result;
+        }
+
     }
     public class Vertex<T>
     {
         public T Value { get; set; }
 
         public List<Edge<T>> Neighbors { get; set; }
+        public bool Visited { get; set; }
 
         public Vertex(T value)
         {
             this.Value = value;
             this.Neighbors = new List<Edge<T>>();
+            this.Visited = false;
         }
 
     }

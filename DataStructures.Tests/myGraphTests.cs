@@ -1,6 +1,7 @@
 ﻿using DataStructures.myGraph;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace DataStructures.Tests
@@ -88,6 +89,47 @@ namespace DataStructures.Tests
             //Assert
             Assert.Equal(diana, actual[1]);
         }
+        //Wrote this before I made Handler Function, left it in to give it another way to test it
+        [Fact]
+        public void Breadth_First_Test_A()
+        {
+            //arrange
+            myGraph<string> testGraph = new myGraph<string>();
+            var bob = testGraph.AddVertex("Bob");
+            var carol = testGraph.AddVertex("Carol");
+            var diana = testGraph.AddVertex("Diana");
+            testGraph.AddEdge(bob, carol, 13);
+            testGraph.AddEdge(bob, diana, 9);
 
+            //act
+            var actual = testGraph.BreadthFirst(bob);
+
+            //Assert
+            Assert.Equal(testGraph.Size(), actual.Count());
+        }
+
+        //Wrote this before I made Handler Function, left it in to give it another way to test it
+        [Fact]
+        public void Breadth_First_Test_B()
+        {
+            //arrange
+            myGraph<string> testGraph = new myGraph<string>();
+            var bob = testGraph.AddVertex("Bob");
+            var carol = testGraph.AddVertex("Carol");
+            var diana = testGraph.AddVertex("Diana");
+            var bill = testGraph.AddVertex("Bill");
+            testGraph.AddEdge(bob, carol, 13);
+            testGraph.AddEdge(bob, diana, 9);
+            testGraph.AddEdge(diana, bill, 23);
+            string expected = "Bob, Carol, Diana, Bill";
+
+
+            //act
+            var actual = testGraph.BreadthFirstHandler(bob);
+            
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }

@@ -12,3 +12,7 @@ parameter for weight.
 - Size(): returns the number of vertices in the graph
 - GetVertices(): returns a list containing all of the vertices associated with that graph.
 - GetNeighbors(vertex): returns a list of neighbors of a given vertex.
+- BreadthFirstHandler(start): Returns a list of vertices, starting with the input, then its neighbors, and then their 
+neighbors. Output is a string of vertices values;
+
+![breadthFirst](breadthFirst.png);
