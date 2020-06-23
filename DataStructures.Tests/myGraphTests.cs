@@ -120,13 +120,15 @@ namespace DataStructures.Tests
             testGraph.AddEdge(bob, carol, 13);
             testGraph.AddEdge(bob, diana, 9);
             testGraph.AddEdge(diana, bill, 23);
+            string expected = "Bob, Carol, Diana, Bill";
 
 
             //act
-            var actual = testGraph.BreadthFirst(bob);
+            var IE = testGraph.BreadthFirst(bob);
+            var actual = testGraph.IEtoString(IE);
 
             //Assert
-            Assert.Equal(testGraph.Size(), actual.Count());
+            Assert.Equal(expected, actual);
         }
     }
 }

@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Google.Protobuf;
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
+
 
 namespace DataStructures.myGraph
 {
@@ -104,7 +106,9 @@ namespace DataStructures.myGraph
             {
                 result = result + $"{vertex.Value}, ";
             }
-            Regex.Replace(result, @"/,\s$", "");
+            Regex rgx = new Regex(",\\s$");
+
+            result = rgx.Replace(result, "");
             return result;
         }
 
