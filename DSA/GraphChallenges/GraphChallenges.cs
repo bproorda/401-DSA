@@ -26,11 +26,17 @@ namespace DSA.GraphChallenges
                         break;
                     }
                 }
+
+                if (current.Value == stops[length-1])
+                {
+                    var result = new TripResult(true, sum);
+                    return result;
+                }
                 i++;
             }
 
-            
-            return default;
+            var result = new TripResult(true, sum);
+            return result;
         }
         
     }
