@@ -7,7 +7,7 @@ namespace DSA.GraphChallenges
 {
     public class GraphChallenges
     {
-        public TripResult PlaneTrip(myGraph<string> graph, string[] stops )
+        public static TripResult PlaneTrip(myGraph<string> graph, string[] stops )
         {
             int length = stops.Length;
             var current = graph.FindVertex(stops[0]);
@@ -29,13 +29,13 @@ namespace DSA.GraphChallenges
 
                 if (current.Value == stops[length-1])
                 {
-                    var result = new TripResult(true, sum);
-                    return result;
+                    var resultTrue = new TripResult(true, sum);
+                    return resultTrue;
                 }
                 i++;
             }
 
-            var result = new TripResult(true, sum);
+            var result = new TripResult(false, null);
             return result;
         }
         
