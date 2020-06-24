@@ -44,9 +44,17 @@ namespace DataStructures.myGraph
                 v1.Neighbors.Add(edge1);
                 v2.Neighbors.Add(edge2);
             }
-
-            
-
+        }
+        public Vertex<T> FindVertex(string value)
+        {
+            foreach (var vertex in Vertices)
+            {
+                if (vertex.Value.ToString() == value)
+                {
+                    return vertex;
+                }
+            }
+            throw new VertexNotFoundException();
         }
 
         public List<Vertex<T>> GetVertices()
@@ -154,5 +162,10 @@ namespace DataStructures.myGraph
             this.Neighbor = neighbor;
             this.Weight = weight;
         }
+    }
+
+    public class VertexNotFoundException : Exception
+    {
+
     }
 }
