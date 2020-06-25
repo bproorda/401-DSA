@@ -14,38 +14,27 @@ namespace DSA.GraphChallenges
             int? sum = 0;
 
 
-            while (current != null)
+
+            for (int i = 1; i < length; i++)
             {
-                int i = 1;
-                for (int j = 0; j < current.Neighbors.Count; j++)
+
+                if (current.HasNeighbor(stops[i]))
                 {
-                    //if (current.Neighbors[j].Neighbor.Value == stops[i])
-                    //{
-                    //sum += current.Neighbors[j].Weight;
-                    //current = current.Neighbors[j].Neighbor;
-                    //  break;
-                    //}
-                    if (current.HasNeighbor(stops[i])){
-                        var neighbor = current.FindEdge(stops[i]);
-                        sum += neighbor.Weight;
-                    }
-                    else
-                    {
-                        var resultFalse = new TripResult(false, null);
-                        return resultFalse;
-                    }
+                    var neighbor = current.FindEdge(stops[i]);
+                    current = neighbor.Neighbor;
+                    sum += neighbor.Weight;
+                }
+                else
+                {
+                    var resultFalse = new TripResult(false, null);
+                    return resultFalse;
                 }
 
-                if (current.Value == stops[length-1])
-                {
-                    var resultTrue = new TripResult(true, sum);
-                    return resultTrue;
-                }
-                i++;
             }
+            var resultTrue = new TripResult(true, sum);
+            return resultTrue;
 
-            var result = new TripResult(false, null);
-            return result;
+
         }
         
     }

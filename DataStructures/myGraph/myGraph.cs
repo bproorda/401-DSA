@@ -178,7 +178,8 @@ namespace DataStructures.myGraph
         {
             for (int i = 0; i < Neighbors.Count; i++)
             {
-                if (Neighbors[i].Neighbor.Value.ToString() == value)
+                var neighborName = Neighbors[i].Neighbor.Value.ToString();
+                if ( neighborName == value)
                 {
                     return true;
                 }
