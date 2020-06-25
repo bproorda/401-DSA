@@ -143,6 +143,10 @@ namespace DataStructures.myGraph
             this.Visited = false;
         }
 
+        public bool HasNeighor(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class Edge<T>
