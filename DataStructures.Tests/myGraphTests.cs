@@ -131,5 +131,27 @@ namespace DataStructures.Tests
             //Assert
             Assert.Equal(expected, actual);
         }
+        [Fact]
+        public void Depth_First_Test()
+        {
+            //arrange
+            myGraph<string> testGraph = new myGraph<string>();
+            var bob = testGraph.AddVertex("Bob");
+            var carol = testGraph.AddVertex("Carol");
+            var diana = testGraph.AddVertex("Diana");
+            var bill = testGraph.AddVertex("Bill");
+            testGraph.AddEdge(bob, carol, 13);
+            testGraph.AddEdge(bob, diana, 9);
+            testGraph.AddEdge(diana, bill, 23);
+            Vertex<string>[] expected = new Vertex<string>[] { bob, diana, bill, carol };
+
+
+            //act
+            var actual = testGraph.DepthFirst();
+
+
+            //Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }

@@ -16,3 +16,8 @@ parameter for weight.
 neighbors. Output is a string of vertices values;
 
 ![breadthFirst](breadthFirst.png);
+
+- DepthFirst: returns a list of vertices in a depth first pattern, following a chain of neighbors
+to the end, before more on to the next
+
+![DepthFirst](DepthFirstGraph.png)

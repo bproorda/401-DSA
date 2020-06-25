@@ -1,4 +1,6 @@
-﻿using Google.Protobuf;
+﻿using DataStructures.myHashTable;
+using DataStructures.StackAndQueue;
+using Google.Protobuf;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -108,6 +110,32 @@ namespace DataStructures.myGraph
                 yield return current;
             }
             
+        }
+
+        public IEnumerable<Vertex<T>> DepthFirst()
+        {
+            MyStack<Vertex<T>> graphStack = new MyStack<Vertex<T>>();
+            MyHashTable<string> visited = new MyHashTable<string>(1024);
+            List<Vertex<T>> results = new List<Vertex<T>>();
+            graphStack.push(Vertices[0]);
+            while (!graphStack.isEmpty())
+            {
+                var current = graphStack.pop();
+                visited.Add(current.Value.ToString(), "visited");
+                foreach (var edge in current.Neighbors)
+                {
+
+                    if (!visited.Contains(edge.Neighbor.Value.ToString()))
+                    {
+                        graphStack.push(edge.Neighbor);
+                  
+                    }
+                   
+                    //results.Add(current);
+                }
+                yield return current;
+            }
+            //return results;
         }
 
         public string BreadthFirstHandler(Vertex<T> start)
