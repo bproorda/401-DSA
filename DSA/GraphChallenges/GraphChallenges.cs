@@ -19,11 +19,20 @@ namespace DSA.GraphChallenges
                 int i = 1;
                 for (int j = 0; j < current.Neighbors.Count; j++)
                 {
-                    if (current.Neighbors[j].Neighbor.Value == stops[i])
+                    //if (current.Neighbors[j].Neighbor.Value == stops[i])
+                    //{
+                    //sum += current.Neighbors[j].Weight;
+                    //current = current.Neighbors[j].Neighbor;
+                    //  break;
+                    //}
+                    if (current.HasNeighbor(stops[i])){
+                        var neighbor = current.FindEdge(stops[i]);
+                        sum += neighbor.Weight;
+                    }
+                    else
                     {
-                        sum += current.Neighbors[j].Weight;
-                        current = current.Neighbors[j].Neighbor;
-                        break;
+                        var resultFalse = new TripResult(false, null);
+                        return resultFalse;
                     }
                 }
 

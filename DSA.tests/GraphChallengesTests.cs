@@ -9,7 +9,7 @@ namespace DSA.tests
 {
    public class GraphChallengesTests
     {
-        [Fact(Skip ="Stuck in an infinite loop")]
+        [Fact(Skip = "Stuck in an infinite loop")]
         //[InlineData(new[] { "Metroville", "Pandora," }, new TripResult(true, 82))]
         public void Airplane_Trip_Test()
         {

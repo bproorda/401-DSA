@@ -45,6 +45,9 @@ namespace DataStructures.myGraph
                 v2.Neighbors.Add(edge2);
             }
         }
+
+  
+
         public Vertex<T> FindVertex(string value)
         {
             foreach (var vertex in Vertices)
@@ -143,9 +146,28 @@ namespace DataStructures.myGraph
             this.Visited = false;
         }
 
-        public bool HasNeighor(string v)
+        public bool HasNeighbor(string value)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < Neighbors.Count; i++)
+            {
+                if (Neighbors[i].Neighbor.Value.ToString() == value)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public Edge<T> FindEdge(string value)
+        {
+            for (int i = 0; i < Neighbors.Count; i++)
+            {
+                if (Neighbors[i].Neighbor.Value.ToString() == value)
+                {
+                    return Neighbors[i];
+                }
+            }
+            return null;
         }
     }
 
