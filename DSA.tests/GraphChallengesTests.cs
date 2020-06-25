@@ -39,7 +39,7 @@ namespace DSA.tests
             TripResult actual = GraphChallenges.GraphChallenges.PlaneTrip(testFlight, stops);
 
             //Assert
-            Assert.Equal(expected, actual);
+            Assert.Equal(expected.cost, actual.cost);
 
 
         }
