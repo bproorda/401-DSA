@@ -44,9 +44,20 @@ namespace DataStructures.myGraph
                 v1.Neighbors.Add(edge1);
                 v2.Neighbors.Add(edge2);
             }
+        }
 
-            
+  
 
+        public Vertex<T> FindVertex(string value)
+        {
+            foreach (var vertex in Vertices)
+            {
+                if (vertex.Value.ToString() == value)
+                {
+                    return vertex;
+                }
+            }
+            throw new VertexNotFoundException();
         }
 
         public List<Vertex<T>> GetVertices()
@@ -135,6 +146,29 @@ namespace DataStructures.myGraph
             this.Visited = false;
         }
 
+        public bool HasNeighbor(string value)
+        {
+            for (int i = 0; i < Neighbors.Count; i++)
+            {
+                if (Neighbors[i].Neighbor.Value.ToString() == value)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public Edge<T> FindEdge(string value)
+        {
+            for (int i = 0; i < Neighbors.Count; i++)
+            {
+                if (Neighbors[i].Neighbor.Value.ToString() == value)
+                {
+                    return Neighbors[i];
+                }
+            }
+            return null;
+        }
     }
 
     public class Edge<T>
@@ -154,5 +188,10 @@ namespace DataStructures.myGraph
             this.Neighbor = neighbor;
             this.Weight = weight;
         }
+    }
+
+    public class VertexNotFoundException : Exception
+    {
+
     }
 }
