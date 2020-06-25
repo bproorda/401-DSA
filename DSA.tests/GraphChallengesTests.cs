@@ -32,7 +32,7 @@ namespace DSA.tests
             testFlight.AddEdge(arendelle, monstropolis, 42);
 
             testFlight.AddEdge(monstropolis, metroville, 105);
-            var expected = new TripResult(true, 82);
+            TripResult expected = new TripResult(true, 82);
             string[] stops = new string[] { "Metroville", "Pandora" };
 
             //act
