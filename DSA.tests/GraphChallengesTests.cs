@@ -9,7 +9,7 @@ namespace DSA.tests
 {
    public class GraphChallengesTests
     {
-        [Fact(Skip = "Stuck in an infinite loop")]
+        [Fact]
         //[InlineData(new[] { "Metroville", "Pandora," }, new TripResult(true, 82))]
         public void Airplane_Trip_Test()
         {
@@ -33,7 +33,7 @@ namespace DSA.tests
 
             testFlight.AddEdge(monstropolis, metroville, 105);
             var expected = new TripResult(true, 82);
-            string[] stops = new string[] { "Metroville", "Pandora," };
+            string[] stops = new string[] { "Metroville", "Pandora" };
 
             //act
             TripResult actual = GraphChallenges.GraphChallenges.PlaneTrip(testFlight, stops);
